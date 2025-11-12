@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProductsSection } from '@/components/ProductsSection';
@@ -13,7 +14,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="min-h-screen">
+      <Header />
+
+      <main className="min-h-screen pt-16">
         <HeroSection />
         <AboutSection />
         <ProductsSection />
