@@ -1,10 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getDocumentBySlug, getDocumentSlugs, Document } from '@/lib/docs';
 import { Section } from '@/components/Section';
 import { Button } from '@/components/Button';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 interface DocPageProps {
   document: Document;
@@ -12,9 +15,18 @@ interface DocPageProps {
 
 export default function DocPage({ document }: DocPageProps) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <Section background="white">
+    <>
+      <Head>
+        <title>{document.metadata.title} - Dune Weaver Documentation</title>
+        <meta name="description" content={document.metadata.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      <Header />
+
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <Section background="white">
         <div className="py-8">
           <div className="mb-6">
             <Button href="/docs" variant="outline">
@@ -152,7 +164,10 @@ export default function DocPage({ document }: DocPageProps) {
           </Button>
         </div>
       </Section>
-    </div>
+      </div>
+
+      <Footer />
+    </>
   );
 }
 

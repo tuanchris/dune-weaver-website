@@ -1,8 +1,11 @@
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { getAllDocuments, getDocumentsByTags, Document, GroupedDocuments } from '@/lib/docs';
 import { Section } from '@/components/Section';
 import { Button } from '@/components/Button';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 interface DocsPageProps {
   groupedDocuments: GroupedDocuments;
@@ -13,9 +16,18 @@ export default function DocsPage({ groupedDocuments, allDocuments }: DocsPagePro
   const sortedTags = Object.keys(groupedDocuments).sort();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <Section background="white">
+    <>
+      <Head>
+        <title>Documentation - Dune Weaver</title>
+        <meta name="description" content="Everything you need to know about building, configuring, and using your Dune Weaver kinetic sand table." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      <Header />
+
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <Section background="white">
         <div className="text-center py-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             Documentation
@@ -66,7 +78,10 @@ export default function DocsPage({ groupedDocuments, allDocuments }: DocsPagePro
           ))}
         </div>
       </Section>
-    </div>
+      </div>
+
+      <Footer />
+    </>
   );
 }
 
