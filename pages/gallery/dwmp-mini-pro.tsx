@@ -1,24 +1,69 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import fs from 'fs/promises';
+import path from 'path';
 
 interface GalleryImage {
-  id: number;
+  filename: string;
   alt: string;
-  pattern: string;
+  src: string;
 }
 
-const galleryImages: GalleryImage[] = [
-  { id: 1, alt: 'DWMP Mini Pro - Spiral Pattern', pattern: 'Spiral' },
-  { id: 2, alt: 'DWMP Mini Pro - Geometric Pattern', pattern: 'Geometric' },
-  { id: 3, alt: 'DWMP Mini Pro - Wave Pattern', pattern: 'Wave' },
-  { id: 4, alt: 'DWMP Mini Pro - Mandala Pattern', pattern: 'Mandala' },
-  { id: 5, alt: 'DWMP Mini Pro - Abstract Pattern', pattern: 'Abstract' },
-  { id: 6, alt: 'DWMP Mini Pro - Fibonacci Pattern', pattern: 'Fibonacci' },
-];
+interface Props {
+  images: GalleryImage[];
+}
 
-export default function DWMPMiniProGallery() {
+export async function getStaticProps() {
+  const galleryDir = path.join(process.cwd(), 'public/gallery/dwmp-mini-pro');
+
+  try {
+    const files = await fs.readdir(galleryDir);
+
+    // Filter for image files
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+    const imageFiles = files.filter(file =>
+      imageExtensions.some(ext => file.toLowerCase().endsWith(ext))
+    );
+
+    // Sort alphabetically
+    imageFiles.sort();
+
+    // Create image objects
+    const images: GalleryImage[] = imageFiles.map(filename => {
+      // Convert filename to readable alt text
+      const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
+      const alt = nameWithoutExt
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+
+      return {
+        filename,
+        alt: `DWMP Mini Pro - ${alt}`,
+        src: `/gallery/dwmp-mini-pro/${filename}`,
+      };
+    });
+
+    return {
+      props: {
+        images,
+      },
+    };
+  } catch (error) {
+    // If directory doesn't exist or is empty, return empty array
+    return {
+      props: {
+        images: [],
+      },
+    };
+  }
+}
+
+export default function DWMPMiniProGallery({ images }: Props) {
+  const hasImages = images.length > 0;
+
   return (
     <>
       <Head>
@@ -70,39 +115,53 @@ export default function DWMPMiniProGallery() {
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {galleryImages.map((image) => (
-              <div
-                key={image.id}
-                className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="aspect-square bg-gradient-to-br from-amber-100 via-amber-50 to-stone-100 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <svg
-                      className="w-24 h-24 mx-auto text-gray-300 mb-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <p className="text-sm text-gray-400 italic">
-                      Community images coming soon
-                    </p>
+          {hasImages ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {images.map((image) => (
+                <div
+                  key={image.filename}
+                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="aspect-square relative bg-gray-100">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-gray-900">{image.alt}</h3>
+                    <p className="text-sm text-gray-500">DWMP Mini Pro</p>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900">{image.pattern} Pattern</h3>
-                  <p className="text-sm text-gray-500">DWMP Mini Pro</p>
-                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="max-w-md mx-auto">
+                <svg
+                  className="w-24 h-24 mx-auto text-gray-300 mb-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <p className="text-xl text-gray-500 mb-2">No images yet</p>
+                <p className="text-gray-400">
+                  Add images to <code className="px-2 py-1 bg-gray-100 rounded text-sm">public/gallery/dwmp-mini-pro/</code> and rebuild
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
 
           {/* Call to Action */}
           <div className="mt-16 text-center">
