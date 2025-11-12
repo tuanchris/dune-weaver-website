@@ -16,8 +16,8 @@ export const HeroSection: React.FC = () => {
           <Button href="#products" variant="primary">
             Explore Builds
           </Button>
-          <Button href="#community" variant="secondary">
-            Join the Community
+          <Button href="https://discord.com/invite/YZ8PTezVHt" variant="secondary">
+            Join Our Community
           </Button>
         </div>
       </div>

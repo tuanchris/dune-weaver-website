@@ -19,7 +19,7 @@ const communityLinks: CommunityLink[] = [
   {
     name: 'Discord',
     description: 'Join our community, get help, and share your builds',
-    link: '#',
+    link: 'https://discord.com/invite/YZ8PTezVHt',
     icon: '💬',
   },
   {

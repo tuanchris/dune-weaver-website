@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { HeroSection } from '@/components/HeroSection';
+import { MostPopularSection } from '@/components/MostPopularSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProductsSection } from '@/components/ProductsSection';
 import { CommunitySection } from '@/components/CommunitySection';
@@ -15,6 +16,7 @@ export default function Home() {
 
       <main className="min-h-screen">
         <HeroSection />
+        <MostPopularSection />
         <AboutSection />
         <ProductsSection />
         <CommunitySection />
