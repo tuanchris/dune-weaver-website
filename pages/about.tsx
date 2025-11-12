@@ -44,79 +44,108 @@ export default function About() {
             </div>
           </section>
 
-          {/* Key Features */}
+          {/* Design Philosophy */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Features</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-amber-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">
-                  Web Control Interface
-                </h3>
-                <p className="text-gray-700">
-                  Control your table remotely with an intuitive web interface for
-                  pattern selection, custom designs, and real-time previews.
-                </p>
-              </div>
-              <div className="bg-amber-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">
-                  3D Printing Friendly
-                </h3>
-                <p className="text-gray-700">
-                  Designed from the ground up to be the most 3D-printing-friendly
-                  kinetic sand table on the internet.
-                </p>
-              </div>
-              <div className="bg-amber-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">
-                  Multiple Versions
-                </h3>
-                <p className="text-gray-700">
-                  Choose from Mini ($27), Standard ($100-150), or Pro versions
-                  to fit your budget and space requirements.
-                </p>
-              </div>
-              <div className="bg-amber-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">
-                  Open Source
-                </h3>
-                <p className="text-gray-700">
-                  Fully open-source project with active community support,
-                  available on GitHub and MakerWorld.
-                </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Design Philosophy</h2>
+            <div className="space-y-6 text-gray-700">
+              <p className="text-lg leading-relaxed">
+                I wanted this version to nail a few key things:
+              </p>
+
+              <div className="space-y-4">
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Printability First
+                  </h3>
+                  <p>
+                    If it could be 3D printed, it should be. No relying on specialty hardware
+                    like timing belts or linear rails when a clever printed solution works better.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Use What's Already Out There
+                  </h3>
+                  <p>
+                    Building around an IKEA BLANDA bowl means you're not hunting down obscure
+                    parts or spending a fortune on custom components.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Pass the Living Room Test
+                  </h3>
+                  <p>
+                    If it looks like a science experiment, it's staying in the garage.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Keep the Cost Reasonable
+                  </h3>
+                  <p>
+                    Commercial options start at $130, use cheap motors, and go way up from there.
+                    This whole build comes in around $100-$150 (cheaper if you have a lot of
+                    parts on hand or build in bulk).
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Silence is Golden
+                  </h3>
+                  <p>
+                    Spent a lot of iteration on making this whisper-quiet. If you build the
+                    NEMA 17 version, you won't even know that it's running.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-amber-600 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Build on What Worked
+                  </h3>
+                  <p>
+                    Took everything I learned from previous Dune Weavers and refined the mechanics,
+                    electronics integration, and added tons of software features.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Versions */}
+          {/* The Experience */}
+          <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Experience</h2>
+            <div className="text-gray-700 space-y-4">
+              <p className="text-lg">
+                This isn't just a print-and-forget project. It becomes a presence in your space.
+                People stop by your desk at work asking about it. Kids are transfixed. You'll
+                find yourself spacing out while watching new patterns emerge. It's genuinely
+                meditative—and makes an unforgettable gift.
+              </p>
+            </div>
+          </section>
+
+          {/* Why Build Instead of Buying */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Available Versions</h2>
-            <div className="space-y-6">
-              <div className="border-l-4 border-amber-600 pl-6 py-2">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  Dune Weaver Original
-                </h3>
-                <p className="text-gray-700">
-                  The original model measuring 420mm in diameter and 136mm in height.
-                  Perfect for those who want a substantial presence on their desk or shelf.
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Build Instead of Buying?</h2>
+            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
+              <div className="text-gray-700 space-y-4">
+                <p className="text-lg">
+                  When you build the Dune Weaver, you get the satisfaction of creating something
+                  with your own hands. You understand exactly how it works (so you can fix or
+                  modify anything), and you're building on an open platform that you truly own.
                 </p>
-              </div>
-              <div className="border-l-4 border-amber-600 pl-6 py-2">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  Mini Dune Weaver
-                </h3>
-                <p className="text-gray-700">
-                  A compact version built from the ground up, costing about $27 to make.
-                  Ideal for beginners or those with limited space.
+                <p>
+                  <strong className="text-amber-900">No cloud dependencies. No subscription fees.
+                  No planned obsolescence.</strong>
                 </p>
-              </div>
-              <div className="border-l-4 border-amber-600 pl-6 py-2">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                  Dune Weaver Pro
-                </h3>
-                <p className="text-gray-700">
-                  The premium version costs around $100-150 USD to create—a steal compared
-                  to commercial versions that can cost thousands of dollars. Features advanced
-                  capabilities and enhanced control options.
+                <p>
+                  Plus, the build itself is genuinely enjoyable—there's something special about
+                  watching it come to life piece by piece.
                 </p>
               </div>
             </div>
@@ -200,20 +229,20 @@ export default function About() {
                 Ready to Build Your Own?
               </h2>
               <p className="text-gray-700 mb-6">
-                Join the community and start creating mesmerizing sand art today.
+                Explore the different versions and find the perfect Dune Weaver for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://github.com/tuanchris/dune-weaver"
+                  href="/#products"
                   className="inline-flex items-center justify-center px-6 py-3 bg-amber-700 text-white font-semibold rounded-lg hover:bg-amber-800 transition-colors"
                 >
-                  View on GitHub
+                  View Products
                 </a>
                 <a
-                  href="https://makerworld.com/en/@tuanchris"
+                  href="/#community"
                   className="inline-flex items-center justify-center px-6 py-3 bg-white text-amber-700 font-semibold rounded-lg border-2 border-amber-700 hover:bg-amber-50 transition-colors"
                 >
-                  Download Files
+                  Join Community
                 </a>
               </div>
             </div>
