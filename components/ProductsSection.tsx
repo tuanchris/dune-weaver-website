@@ -4,17 +4,8 @@ import { ProductCard, Product } from './ProductCard';
 
 const products: Product[] = [
   {
-    name: 'DWMP – Mini Pro',
-    description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
-    badge: {
-      text: '💎 Patreon',
-      type: 'patreon',
-    },
-    ctaText: 'Get on Patreon',
-    ctaLink: '#',
-  },
-  {
-    name: 'DWP – Dune Weaver Pro',
+    name: 'Dune Weaver Pro',
+    image: '/images/dune-weaver-pro.jpg',
     description: 'The ultimate kinetic sand table. Full-sized with professional-grade components, advanced controls, and the largest drawing surface for spectacular patterns.',
     badge: {
       text: '💎 Patreon',
@@ -24,7 +15,19 @@ const products: Product[] = [
     ctaLink: '#',
   },
   {
-    name: 'DW Mini',
+    name: 'Dune Weaver Mini Pro',
+    image: '/images/dune-weaver-mini-pro.jpg',
+    description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
+    badge: {
+      text: '💎 Patreon',
+      type: 'patreon',
+    },
+    ctaText: 'Get on Patreon',
+    ctaLink: '#',
+  },
+  {
+    name: 'Dune Weaver Mini',
+    image: '/images/dune-weaver-mini.jpg',
     description: 'A free, beginner-friendly desktop sand table. Great for learning and experimentation. Print it yourself and start creating beautiful patterns today.',
     badge: {
       text: 'MakerWorld',
@@ -34,7 +37,8 @@ const products: Product[] = [
     ctaLink: '#',
   },
   {
-    name: 'OG DW – Original',
+    name: 'Dune Weaver OG',
+    image: '/images/dune-weaver-og.jpg',
     description: 'The original open-source Dune Weaver design. A proven build with a passionate community and extensive documentation. Perfect for tinkerers.',
     badge: {
       text: 'MakerWorld',
@@ -50,7 +54,7 @@ export const ProductsSection: React.FC = () => {
     <Section id="products" background="gray">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Choose Your Build
+          Choose Your Dune Weaver
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           From free open-source designs to premium builds, there's a Dune Weaver for everyone.
