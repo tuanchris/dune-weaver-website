@@ -5,11 +5,11 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
-    { name: 'Doc', href: '/doc' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'About', href: '/about' },
+    { name: 'Home', href: '/', external: false },
+    { name: 'Shop', href: 'https://www.patreon.com/c/duneweaver/shop', external: true },
+    { name: 'Doc', href: '/doc', external: false },
+    { name: 'Gallery', href: '/gallery', external: false },
+    { name: 'About', href: '/about', external: false },
   ];
 
   return (
@@ -23,15 +23,27 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -82,16 +94,29 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium px-2 py-1"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium px-2 py-1"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium px-2 py-1"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}
