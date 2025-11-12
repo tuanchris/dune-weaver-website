@@ -16,6 +16,9 @@ export const HeroSection: React.FC = () => {
           <Button href="#products" variant="primary">
             Explore Builds
           </Button>
+          <Button href="/docs" variant="outline">
+            Documentation
+          </Button>
           <Button href="#community" variant="secondary">
             Join the Community
           </Button>
