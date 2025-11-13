@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light theme (original) */
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
-}
-
-/* Dark theme - uncomment to activate */
-/*
+/* Dark theme (active) */
 :root {
   --foreground-rgb: 232, 234, 237;
   --background-rgb: 15, 20, 25;
@@ -17,6 +10,13 @@
   --card-rgb: 36, 41, 54;
   --border-rgb: 45, 53, 72;
   --accent-rgb: 94, 234, 212;
+}
+
+/* Light theme (original - commented out) */
+/*
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
 }
 */
 
