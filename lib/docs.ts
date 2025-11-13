@@ -7,7 +7,7 @@ const docsDirectory = path.join(process.cwd(), 'docs');
 export interface DocumentMetadata {
   title: string;
   description: string;
-  tags: string[];
+  tableType: string;
   date: string;
 }
 
@@ -18,7 +18,7 @@ export interface Document {
 }
 
 export interface GroupedDocuments {
-  [tag: string]: Document[];
+  [tableType: string]: Document[];
 }
 
 /**
@@ -49,7 +49,7 @@ export function getDocumentBySlug(slug: string): Document | null {
       metadata: {
         title: data.title || 'Untitled',
         description: data.description || '',
-        tags: data.tags || [],
+        tableType: data.tableType || 'General',
         date: typeof data.date === 'string' ? data.date : (data.date ? data.date.toString() : ''),
       },
       content,
@@ -80,36 +80,35 @@ export function getAllDocuments(): Document[] {
 }
 
 /**
- * Group documents by tags
+ * Group documents by table type
  */
-export function getDocumentsByTags(): GroupedDocuments {
+export function getDocumentsByTableType(): GroupedDocuments {
   const documents = getAllDocuments();
   const grouped: GroupedDocuments = {};
 
   documents.forEach(doc => {
-    doc.metadata.tags.forEach(tag => {
-      if (!grouped[tag]) {
-        grouped[tag] = [];
-      }
-      grouped[tag].push(doc);
-    });
+    const tableType = doc.metadata.tableType;
+    if (!grouped[tableType]) {
+      grouped[tableType] = [];
+    }
+    grouped[tableType].push(doc);
   });
 
   return grouped;
 }
 
 /**
- * Get all unique tags
+ * Get all unique table types
  */
-export function getAllTags(): string[] {
+export function getAllTableTypes(): string[] {
   const documents = getAllDocuments();
-  const tags = new Set<string>();
+  const tableTypes = new Set<string>();
 
   documents.forEach(doc => {
-    doc.metadata.tags.forEach(tag => tags.add(tag));
+    tableTypes.add(doc.metadata.tableType);
   });
 
-  return Array.from(tags).sort();
+  return Array.from(tableTypes).sort();
 }
 
 /**
@@ -123,8 +122,8 @@ export function searchDocuments(query: string): Document[] {
     const titleMatch = doc.metadata.title.toLowerCase().includes(lowerQuery);
     const descriptionMatch = doc.metadata.description.toLowerCase().includes(lowerQuery);
     const contentMatch = doc.content.toLowerCase().includes(lowerQuery);
-    const tagMatch = doc.metadata.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
+    const tableTypeMatch = doc.metadata.tableType.toLowerCase().includes(lowerQuery);
 
-    return titleMatch || descriptionMatch || contentMatch || tagMatch;
+    return titleMatch || descriptionMatch || contentMatch || tableTypeMatch;
   });
 }

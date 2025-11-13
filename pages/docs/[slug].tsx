@@ -45,6 +45,10 @@ export default function DocPage({ document }: DocPageProps) {
           )}
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <span className="inline-block px-3 py-1 bg-sand-100 text-sand-800 rounded-full text-xs font-medium">
+              {document.metadata.tableType}
+            </span>
+
             {document.metadata.date && (
               <span>
                 {new Date(document.metadata.date).toLocaleDateString('en-US', {
@@ -53,19 +57,6 @@ export default function DocPage({ document }: DocPageProps) {
                   day: 'numeric'
                 })}
               </span>
-            )}
-
-            {document.metadata.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {document.metadata.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block px-3 py-1 bg-sand-100 text-sand-800 rounded-full text-xs font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             )}
           </div>
         </div>
