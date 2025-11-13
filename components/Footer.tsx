@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex gap-6 text-sm">
-            <a href="#about" className="hover:text-white transition-colors">
+            <a href="/about" className="hover:text-white transition-colors">
               About
             </a>
             <a href="#products" className="hover:text-white transition-colors">
