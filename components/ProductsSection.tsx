@@ -12,7 +12,7 @@ const products: Product[] = [
       type: 'patreon',
     },
     ctaText: 'Get on Patreon',
-    ctaLink: '#',
+    ctaLink: 'https://www.patreon.com/posts/dune-weaver-pro-137394378',
   },
   {
     name: 'Dune Weaver Mini Pro',
@@ -23,18 +23,7 @@ const products: Product[] = [
       type: 'patreon',
     },
     ctaText: 'Get on Patreon',
-    ctaLink: '#',
-  },
-  {
-    name: 'Dune Weaver Mini',
-    image: '/images/dune-weaver-mini.jpg',
-    description: 'A free, beginner-friendly desktop sand table. Great for learning and experimentation. Print it yourself and start creating beautiful patterns today.',
-    badge: {
-      text: 'MakerWorld',
-      type: 'makerworld',
-    },
-    ctaText: 'Download Free',
-    ctaLink: '#',
+    ctaLink: 'https://www.patreon.com/posts/dune-weaver-mini-141674449',
   },
   {
     name: 'Dune Weaver OG',
@@ -45,7 +34,18 @@ const products: Product[] = [
       type: 'makerworld',
     },
     ctaText: 'Download Free',
-    ctaLink: '#',
+    ctaLink: 'https://makerworld.com/en/models/841332-dune-weaver-a-3d-printed-kinetic-sand-table#profileId-787553',
+  },
+  {
+    name: 'Dune Weaver Mini',
+    image: '/images/dune-weaver-mini.jpg',
+    description: 'A free, beginner-friendly desktop sand table. Great for learning and experimentation. Print it yourself and start creating beautiful patterns today.',
+    badge: {
+      text: 'MakerWorld',
+      type: 'makerworld',
+    },
+    ctaText: 'Download Free',
+    ctaLink: 'https://makerworld.com/en/models/896314-mini-dune-weaver-not-your-typical-marble-run#profileId-854412',
   },
 ];
 
