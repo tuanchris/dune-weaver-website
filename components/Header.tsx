@@ -18,7 +18,7 @@ export const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-amber-900">Dune Weaver</span>
+            <span className="text-2xl font-bold text-sand-700">Dune Weaver</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -30,7 +30,7 @@ export const Header = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-sand-900 hover:text-sand-600 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </a>
@@ -38,7 +38,7 @@ export const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-sand-900 hover:text-sand-600 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>
@@ -49,7 +49,7 @@ export const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-amber-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-900"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-sand-900 hover:text-sand-600 hover:bg-sand-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sand-600"
             aria-expanded="false"
           >
             <span className="sr-only">Open main menu</span>
@@ -101,7 +101,7 @@ export const Header = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium px-2 py-1"
+                    className="text-sand-900 hover:text-sand-600 transition-colors duration-200 font-medium px-2 py-1"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -110,7 +110,7 @@ export const Header = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium px-2 py-1"
+                    className="text-sand-900 hover:text-sand-600 transition-colors duration-200 font-medium px-2 py-1"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}

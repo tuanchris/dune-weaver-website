@@ -79,7 +79,7 @@ export default function DWPProGallery({ images }: Props) {
           <div className="mb-8">
             <Link
               href="/gallery"
-              className="text-amber-600 hover:text-amber-700 flex items-center"
+              className="text-sand-600 hover:text-sand-700 flex items-center"
             >
               <svg
                 className="w-5 h-5 mr-2"
@@ -101,7 +101,7 @@ export default function DWPProGallery({ images }: Props) {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-amber-900">
+              <h1 className="text-4xl md:text-5xl font-bold text-sand-700">
                 DWP – Dune Weaver Pro
               </h1>
               <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-100 text-purple-700">
@@ -133,7 +133,7 @@ export default function DWPProGallery({ images }: Props) {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-gray-900">{image.alt}</h3>
+                    <h3 className="font-semibold text-sand-900">{image.alt}</h3>
                     <p className="text-sm text-gray-500">DWP Pro</p>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function DWPProGallery({ images }: Props) {
           {/* Call to Action */}
           <div className="mt-16 text-center">
             <div className="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-sand-900 mb-4">
                 Share Your Creations
               </h2>
               <p className="text-gray-600 mb-6">
@@ -175,7 +175,7 @@ export default function DWPProGallery({ images }: Props) {
               </p>
               <a
                 href="#"
-                className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
+                className="inline-flex items-center px-6 py-3 bg-sand-600 text-white rounded-lg hover:bg-sand-700 transition-colors font-semibold"
               >
                 Submit Your Photos
                 <svg

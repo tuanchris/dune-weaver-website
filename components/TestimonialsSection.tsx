@@ -37,10 +37,10 @@ export const TestimonialsSection: React.FC = () => {
   return (
     <Section id="testimonials" background="sand">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-sand-900 mb-4">
           What People Are Saying
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-sand-700 max-w-2xl mx-auto">
           Hear from the makers and enthusiasts who have brought Dune Weaver into their lives.
         </p>
       </div>
@@ -58,13 +58,13 @@ export const TestimonialsSection: React.FC = () => {
                 {testimonial.initials}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-lg font-bold text-sand-900">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-gray-500">{testimonial.role}</p>
+                <p className="text-sm text-sand-600">{testimonial.role}</p>
               </div>
             </div>
-            <p className="text-gray-700 leading-relaxed italic">
+            <p className="text-sand-800 leading-relaxed italic">
               "{testimonial.content}"
             </p>
           </div>
