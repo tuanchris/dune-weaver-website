@@ -3,6 +3,7 @@ import { Button } from './Button';
 
 export interface Product {
   name: string;
+  image?: string;
   description: string;
   badge: {
     text: string;
@@ -30,6 +31,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {product.badge.text}
         </span>
       </div>
+
+      {product.image && (
+        <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-square flex items-center justify-center">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
 
       <p className="text-gray-600 mb-6 flex-grow">
         {product.description}
