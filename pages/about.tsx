@@ -26,27 +26,34 @@ export default function About() {
 
           {/* What is Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Dune Weaver?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              What is Dune Weaver?
+            </h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
-                Dune Weaver is a web-controlled kinetic sand table that creates mesmerizing patterns
-                in sand using a steel ball guided by magnets beneath the surface. It's a motorized
-                sand table that creates stunning, intricate patterns in sand using a steel ball
-                guided by hidden magnets, powered by an Arduino and a CNC shield.
+                Dune Weaver is a web-controlled kinetic sand table that creates
+                mesmerizing patterns in sand using a steel ball guided by
+                magnets beneath the surface. It's a motorized sand table that
+                creates stunning, intricate patterns in sand using a steel ball
+                guided by hidden magnets, powered by a raspbery pi and a micro
+                controller (ESP32 or DLC32).
               </p>
               <p>
-                The project seamlessly integrates hardware control with a modern web interface,
-                featuring real-time pattern execution, playlist management, and synchronized
-                lighting effects. With the Arduino connected to a Raspberry Pi or computer,
-                you can control the table via a web interface, selecting patterns, uploading
-                custom designs, or previewing the ball's motion.
+                The project seamlessly integrates hardware control with a modern
+                web interface, featuring real-time pattern execution, playlist
+                management, and synchronized lighting effects. With the
+                microcontroller connected to a Raspberry Pi or computer, you can
+                control the table via a web interface, selecting patterns,
+                uploading custom designs, or previewing the ball's motion.
               </p>
             </div>
           </section>
 
           {/* Design Philosophy */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Design Philosophy</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Design Philosophy
+            </h2>
             <div className="space-y-6 text-gray-700">
               <p className="text-lg leading-relaxed">
                 I wanted this version to nail a few key things:
@@ -58,8 +65,9 @@ export default function About() {
                     Printability First
                   </h3>
                   <p>
-                    If it could be 3D printed, it should be. No relying on specialty hardware
-                    like timing belts or linear rails when a clever printed solution works better.
+                    If it could be 3D printed, it should be. No relying on
+                    specialty hardware like timing belts or linear rails when a
+                    clever printed solution works better.
                   </p>
                 </div>
 
@@ -68,8 +76,9 @@ export default function About() {
                     Use What's Already Out There
                   </h3>
                   <p>
-                    Building around an IKEA BLANDA bowl means you're not hunting down obscure
-                    parts or spending a fortune on custom components.
+                    Building around accessible furnitures (IKEA) means you're
+                    not hunting down obscure parts or spending a fortune on
+                    custom components.
                   </p>
                 </div>
 
@@ -78,7 +87,8 @@ export default function About() {
                     Pass the Living Room Test
                   </h3>
                   <p>
-                    If it looks like a science experiment, it's staying in the garage.
+                    If it looks like a science experiment, it's staying in the
+                    garage.
                   </p>
                 </div>
 
@@ -87,9 +97,8 @@ export default function About() {
                     Keep the Cost Reasonable
                   </h3>
                   <p>
-                    Commercial options start at $130, use cheap motors, and go way up from there.
-                    This whole build comes in around $100-$150 (cheaper if you have a lot of
-                    parts on hand or build in bulk).
+                    Build your own for a fraction of the cost of commercial
+                    alternatives
                   </p>
                 </div>
 
@@ -98,8 +107,9 @@ export default function About() {
                     Silence is Golden
                   </h3>
                   <p>
-                    Spent a lot of iteration on making this whisper-quiet. If you build the
-                    NEMA 17 version, you won't even know that it's running.
+                    Spent a lot of iteration on making this whisper-quiet. If
+                    you build the NEMA 17 version, you won't even know that it's
+                    running.
                   </p>
                 </div>
 
@@ -108,8 +118,9 @@ export default function About() {
                     Build on What Worked
                   </h3>
                   <p>
-                    Took everything I learned from previous Dune Weavers and refined the mechanics,
-                    electronics integration, and added tons of software features.
+                    Took everything I learned from previous Dune Weavers and
+                    refined the mechanics, electronics integration, and added
+                    tons of software features.
                   </p>
                 </div>
               </div>
@@ -118,12 +129,15 @@ export default function About() {
 
           {/* The Experience */}
           <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Experience</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              The Experience
+            </h2>
             <div className="text-gray-700 space-y-4">
               <p className="text-lg">
-                This isn't just a print-and-forget project. It becomes a presence in your space.
-                People stop by your desk at work asking about it. Kids are transfixed. You'll
-                find yourself spacing out while watching new patterns emerge. It's genuinely
+                This isn't just a print-and-forget project. It becomes a
+                presence in your space. People stop by your desk at work asking
+                about it. Kids are transfixed. You'll find yourself spacing out
+                while watching new patterns emerge. It's genuinely
                 meditative—and makes an unforgettable gift.
               </p>
             </div>
@@ -131,21 +145,27 @@ export default function About() {
 
           {/* Why Build Instead of Buying */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Build Instead of Buying?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Why Build Instead of Buying?
+            </h2>
             <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
               <div className="text-gray-700 space-y-4">
                 <p className="text-lg">
-                  When you build the Dune Weaver, you get the satisfaction of creating something
-                  with your own hands. You understand exactly how it works (so you can fix or
-                  modify anything), and you're building on an open platform that you truly own.
+                  When you build the Dune Weaver, you get the satisfaction of
+                  creating something with your own hands. You understand exactly
+                  how it works (so you can fix or modify anything), and you're
+                  building on an open platform that you truly own.
                 </p>
                 <p>
-                  <strong className="text-amber-900">No cloud dependencies. No subscription fees.
-                  No planned obsolescence.</strong>
+                  <strong className="text-amber-900">
+                    No cloud dependencies. No subscription fees. No planned
+                    obsolescence.
+                  </strong>
                 </p>
                 <p>
-                  Plus, the build itself is genuinely enjoyable—there's something special about
-                  watching it come to life piece by piece.
+                  Plus, the build itself is genuinely enjoyable—there's
+                  something special about watching it come to life piece by
+                  piece.
                 </p>
               </div>
             </div>
@@ -153,38 +173,64 @@ export default function About() {
 
           {/* About the Creator */}
           <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Meet the Creator</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Meet the Creator
+            </h2>
             <div className="space-y-4 text-gray-700">
               <p className="text-lg">
-                <span className="font-semibold text-amber-900">Tuan Nguyen</span> is a data
-                professional with a passion for STEM and making. As the creator of Dune Weaver,
-                Tuan has combined his technical expertise with creative vision to bring this
-                mesmerizing kinetic art project to the maker community.
+                Hi, I'm{" "}
+                <span className="font-semibold text-amber-900">Tuan</span>—data
+                geek by trade, maker at heart. I started Dune Weaver because I
+                wanted a kinetic sand table that anyone could actually build:
+                printable parts, off-the-shelf hardware, no mystery boxes.
+                Beautiful motion, without the scary bill.
               </p>
               <p>
-                Tuan's work on Dune Weaver has gained recognition across the maker community,
-                with features in publications like Tom's Hardware. His commitment to making
-                advanced kinetic art accessible to everyone is evident in the project's
-                open-source nature and focus on affordability.
+                I design Dune Weaver to be open, affordable, and hackable. The
+                files are open-source, the builds are 3D-print-friendly, and the
+                software runs locally. I’m constantly refining motion profiles,
+                cable routing, and assembly steps so your first build feels
+                smooth, not stressful. Along the way, Dune Weaver has been
+                featured by places like Tom’s Hardware, and—more importantly—by
+                a growing community of builders who share patterns, mods, and
+                clever fixes.
               </p>
               <p>
-                Through careful design and engineering, Tuan has created what is arguably the
-                most 3D-printing-friendly kinetic sand table available, making it possible
-                for makers worldwide to create their own mesmerizing sand art installations
-                at a fraction of the cost of commercial alternatives.
+                My background is in data and softwarex engineering, but I live
+                for hands-on projects—3D printing, electronics, LEDs, the whole
+                maker buffet. That mix shows up in Dune Weaver: careful
+                engineering where it matters, and plenty of room to customize.
+                Whether you pick up the free designs or dive into the Pro
+                versions, you’ll find clear guides, a friendly Discord, and
+                patterns that make the sand look like it’s thinking.
+              </p>
+              <p>
+                If you’re here, you’re probably a tinkerer, a learner, or
+                someone who just loves mesmerizing things. Welcome. Grab the
+                files, join the community, and build something you’ll be proud
+                to leave running on the coffee table.
               </p>
               <div className="mt-6 pt-6 border-t border-amber-200">
                 <p className="text-sm text-gray-600">
-                  Connect with Tuan and the Dune Weaver community on{' '}
-                  <a href="https://github.com/tuanchris" className="text-amber-700 hover:text-amber-900 underline">
+                  Connect with Tuan and the Dune Weaver community on{" "}
+                  <a
+                    href="https://github.com/tuanchris"
+                    className="text-amber-700 hover:text-amber-900 underline"
+                  >
                     GitHub
                   </a>
-                  ,{' '}
-                  <a href="https://makerworld.com/en/@tuanchris" className="text-amber-700 hover:text-amber-900 underline">
+                  ,{" "}
+                  <a
+                    href="https://makerworld.com/en/@tuanchris"
+                    className="text-amber-700 hover:text-amber-900 underline"
+                  >
                     MakerWorld
                   </a>
-                  , and{' '}
-                  <a href="https://www.patreon.com/DuneWeaver" className="text-amber-700 hover:text-amber-900 underline">
+                  , and{" "}
+                  <a
+                    href="https://www.patreon.com/DuneWeaver"
+                    className="text-amber-700 hover:text-amber-900 underline"
+                  >
                     Patreon
                   </a>
                   .
@@ -195,28 +241,45 @@ export default function About() {
 
           {/* Why Choose Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Dune Weaver?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Why Choose Dune Weaver?
+            </h2>
             <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span><strong>Affordable:</strong> Build your own for a fraction of the cost of commercial alternatives</span>
+                  <span>
+                    <strong>Affordable:</strong> Build your own for a fraction
+                    of the cost of commercial alternatives
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span><strong>Open Source:</strong> Full access to designs, code, and community support</span>
+                  <span>
+                    <strong>Open Source:</strong> Full access to designs, code,
+                    and community support
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span><strong>Customizable:</strong> Modify and personalize your build to suit your preferences</span>
+                  <span>
+                    <strong>Customizable:</strong> Modify and personalize your
+                    build to suit your preferences
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span><strong>Educational:</strong> Learn about electronics, programming, and mechanical design</span>
+                  <span>
+                    <strong>Educational:</strong> Learn about electronics,
+                    programming, and mechanical design
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span><strong>Community Driven:</strong> Active Discord community for support and inspiration</span>
+                  <span>
+                    <strong>Community Driven:</strong> Active Discord community
+                    for support and inspiration
+                  </span>
                 </li>
               </ul>
             </div>
@@ -229,7 +292,8 @@ export default function About() {
                 Ready to Build Your Own?
               </h2>
               <p className="text-gray-700 mb-6">
-                Explore the different versions and find the perfect Dune Weaver for you.
+                Explore the different versions and find the perfect Dune Weaver
+                for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

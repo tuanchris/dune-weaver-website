@@ -9,22 +9,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="font-bold text-white text-lg mb-1">Dune Weaver</p>
-            <p className="text-sm">Open-source kinetic sand art</p>
-          </div>
-
-          <div className="flex gap-6 text-sm">
-            <a href="/about" className="hover:text-white transition-colors">
-              About
-            </a>
-            <a href="/#products" className="hover:text-white transition-colors">
-              Products
-            </a>
-            <a href="/#community" className="hover:text-white transition-colors">
-              Community
-            </a>
-            <a href="https://github.com/tuanchris/dune-weaver/" className="hover:text-white transition-colors">
-              GitHub
-            </a>
+            <p className="text-sm">Build a mesmerizing kinetic sand machine.</p>
           </div>
 
           <div className="text-sm text-center md:text-right">
