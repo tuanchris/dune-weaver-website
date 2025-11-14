@@ -5,12 +5,17 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import fs from 'fs/promises';
 import path from 'path';
+import sizeOf from 'image-size';
+import { useState, useEffect } from 'react';
 
 interface GalleryMedia {
   filename: string;
   alt: string;
   src: string;
   type: 'image' | 'video';
+  width?: number;
+  height?: number;
+  aspectRatio?: number;
 }
 
 interface Props {
@@ -37,7 +42,7 @@ export async function getStaticProps() {
     mediaFiles.sort();
 
     // Create media objects
-    const media: GalleryMedia[] = mediaFiles.map(filename => {
+    const media: GalleryMedia[] = await Promise.all(mediaFiles.map(async filename => {
       // Convert filename to readable alt text
       const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
       const alt = nameWithoutExt
@@ -46,15 +51,39 @@ export async function getStaticProps() {
 
       // Determine if file is image or video
       const lowerFile = filename.toLowerCase();
-      const type = videoExtensions.some(ext => lowerFile.endsWith(ext)) ? 'video' : 'image';
+      const type: 'image' | 'video' = videoExtensions.some(ext => lowerFile.endsWith(ext)) ? 'video' : 'image';
 
-      return {
+      // Get image dimensions for images (not videos)
+      const baseMedia = {
         filename,
         alt,
         src: `/gallery/og-dw/${filename}`,
         type,
       };
-    });
+
+      if (type === 'image') {
+        try {
+          const filePath = path.join(galleryDir, filename);
+          const buffer = await fs.readFile(filePath);
+          const dimensions = sizeOf(buffer);
+          if (dimensions && dimensions.width && dimensions.height) {
+            return {
+              ...baseMedia,
+              width: dimensions.width,
+              height: dimensions.height,
+              aspectRatio: dimensions.width / dimensions.height,
+            };
+          }
+        } catch (error) {
+          console.warn(`Failed to get dimensions for ${filename}:`, error);
+        }
+        // If dimension reading failed, return with default square aspect ratio
+        return { ...baseMedia, aspectRatio: 1 };
+      } else {
+        // For videos, use 16:9 aspect ratio as default
+        return { ...baseMedia, aspectRatio: 16 / 9 };
+      }
+    }));
 
     return {
       props: {
@@ -73,6 +102,29 @@ export async function getStaticProps() {
 
 export default function OGDWGallery({ media }: Props) {
   const hasMedia = media.length > 0;
+  const [selectedMedia, setSelectedMedia] = useState<GalleryMedia | null>(null);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!selectedMedia) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedMedia(null);
+      } else if (e.key === 'ArrowLeft') {
+        const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : media.length - 1;
+        setSelectedMedia(media[prevIndex]);
+      } else if (e.key === 'ArrowRight') {
+        const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+        const nextIndex = currentIndex < media.length - 1 ? currentIndex + 1 : 0;
+        setSelectedMedia(media[nextIndex]);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedMedia, media]);
 
   return (
     <>
@@ -126,33 +178,36 @@ export default function OGDWGallery({ media }: Props) {
 
           {/* Gallery Grid */}
           {hasMedia ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-7xl mx-auto space-y-6">
               {media.map((item) => (
                 <div
                   key={item.filename}
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer break-inside-avoid mb-6"
+                  onClick={() => setSelectedMedia(item)}
                 >
-                  <div className="aspect-square relative bg-gray-100">
-                    {item.type === 'video' ? (
-                      <video
-                        src={item.src}
-                        controls
-                        className="w-full h-full object-cover"
-                        preload="metadata"
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                    )}
-                  </div>
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.src}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      preload="metadata"
+                      muted
+                      loop
+                      onMouseEnter={(e) => e.currentTarget.play()}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.pause();
+                        e.currentTarget.currentTime = 0;
+                      }}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -213,6 +268,119 @@ export default function OGDWGallery({ media }: Props) {
           </div>
         </div>
       </main>
+
+      {/* Lightbox Modal */}
+      {selectedMedia && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+          onClick={() => setSelectedMedia(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={() => setSelectedMedia(null)}
+            aria-label="Close"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {selectedMedia.type === 'video' ? (
+              <video
+                src={selectedMedia.src}
+                controls
+                autoPlay
+                className="w-full h-full max-h-[90vh] object-contain"
+              >
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <div className="relative w-full" style={{ aspectRatio: selectedMedia.aspectRatio || 1 }}>
+                <Image
+                  src={selectedMedia.src}
+                  alt={selectedMedia.alt}
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            )}
+            <div className="text-white text-center mt-4 text-lg">
+              {selectedMedia.alt}
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          {media.length > 1 && (
+            <>
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+                  const prevIndex = currentIndex > 0 ? currentIndex - 1 : media.length - 1;
+                  setSelectedMedia(media[prevIndex]);
+                }}
+                aria-label="Previous"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+                  const nextIndex = currentIndex < media.length - 1 ? currentIndex + 1 : 0;
+                  setSelectedMedia(media[nextIndex]);
+                }}
+                aria-label="Next"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+      )}
 
       <Footer />
     </>
