@@ -19,11 +19,21 @@ export const HeroSection: React.FC = () => {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
+  // Debug: log state changes
+  useEffect(() => {
+    console.log('State update - showImage:', showImage, 'isVideoReady:', isVideoReady, 'currentVideoIndex:', currentVideoIndex);
+  }, [showImage, isVideoReady, currentVideoIndex]);
+
   useEffect(() => {
     // After 5 seconds, transition from image to video
+    console.log('Setting timer for image transition. isVideoReady:', isVideoReady);
     const imageTimer = setTimeout(() => {
+      console.log('Timer fired. isVideoReady:', isVideoReady);
       if (isVideoReady) {
+        console.log('Transitioning from image to video');
         setShowImage(false);
+      } else {
+        console.log('Video not ready yet, staying on image');
       }
     }, IMAGE_DISPLAY_DURATION);
 
@@ -33,26 +43,49 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     // Preload and setup first video
     if (videoRefs.current[0]) {
-      videoRefs.current[0].load();
+      console.log('Setting up first video:', HERO_VIDEOS[0]);
+      const firstVideo = videoRefs.current[0];
 
       const handleCanPlay = () => {
+        console.log('First video can play');
         setIsVideoReady(true);
       };
 
-      videoRefs.current[0].addEventListener('canplay', handleCanPlay);
-
-      return () => {
-        if (videoRefs.current[0]) {
-          videoRefs.current[0].removeEventListener('canplay', handleCanPlay);
+      const handleError = (e: Event) => {
+        console.error('Video load error:', e);
+        const videoEl = e.target as HTMLVideoElement;
+        if (videoEl.error) {
+          console.error('Video error code:', videoEl.error.code);
+          console.error('Video error message:', videoEl.error.message);
         }
       };
+
+      const handleLoadedMetadata = () => {
+        console.log('Video metadata loaded');
+      };
+
+      firstVideo.addEventListener('canplay', handleCanPlay);
+      firstVideo.addEventListener('error', handleError);
+      firstVideo.addEventListener('loadedmetadata', handleLoadedMetadata);
+      firstVideo.load();
+
+      return () => {
+        firstVideo.removeEventListener('canplay', handleCanPlay);
+        firstVideo.removeEventListener('error', handleError);
+        firstVideo.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      };
+    } else {
+      console.log('First video ref not available');
     }
   }, []);
 
   useEffect(() => {
     // Play current video when showImage becomes false or when currentVideoIndex changes
+    console.log('Play effect triggered - showImage:', showImage, 'currentVideoIndex:', currentVideoIndex);
+
     if (!showImage && videoRefs.current[currentVideoIndex]) {
       const currentVideo = videoRefs.current[currentVideoIndex];
+      console.log('Playing video:', HERO_VIDEOS[currentVideoIndex]);
 
       // Reset and play the current video
       currentVideo.currentTime = 0;
