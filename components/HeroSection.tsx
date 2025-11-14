@@ -4,9 +4,9 @@ import { Section } from './Section';
 
 // Configuration for hero videos
 const HERO_VIDEOS = [
-  '/videos/hero/video1.mp4',
-  '/videos/hero/video2.mp4',
-  '/videos/hero/video3.mp4',
+  '/videos/hero/video1.mov',
+  '/videos/hero/video2.mov',
+  '/videos/hero/video3.mov',
 ];
 
 const INITIAL_IMAGE = '/images/hero-dune-weaver.jpeg';
@@ -70,22 +70,27 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Background Videos - cycle after image */}
-      {HERO_VIDEOS.map((videoSrc, index) => (
-        <video
-          key={videoSrc}
-          ref={(el) => (videoRefs.current[index] = el)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-          autoPlay={index === currentVideoIndex && !showImage}
-          muted
-          playsInline
-          onEnded={handleVideoEnd}
-          preload={index === 0 ? 'auto' : 'metadata'}
-        >
-          <source src={videoSrc} type="video/mp4" />
-        </video>
-      ))}
+      {HERO_VIDEOS.map((videoSrc, index) => {
+        // Determine video type from file extension
+        const videoType = videoSrc.endsWith('.mov') ? 'video/quicktime' : 'video/mp4';
+
+        return (
+          <video
+            key={videoSrc}
+            ref={(el) => (videoRefs.current[index] = el)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            autoPlay={index === currentVideoIndex && !showImage}
+            muted
+            playsInline
+            onEnded={handleVideoEnd}
+            preload={index === 0 ? 'auto' : 'metadata'}
+          >
+            <source src={videoSrc} type={videoType} />
+          </video>
+        );
+      })}
 
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-black/20"></div>
