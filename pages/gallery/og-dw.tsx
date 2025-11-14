@@ -246,7 +246,7 @@ export default function OGDWGallery({ media }: Props) {
                 the community and get featured in our gallery!
               </p>
               <a
-                href="#"
+                href="https://discord.gg/mkbXyP6pw8"
                 className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
               >
                 Submit Your Photos
