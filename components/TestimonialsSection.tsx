@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
   {
     name: 'm8tec',
     role: 'Maker',
-    content: 'Family sending images in the group chat every time they see a nice pattern 😀',
+    content: "Thanks for creating this project, making it freely available for everyone to rebuild, maintaining it and even giving support here. It is not self-evident that you are doing that. It’s a very fascinating machine and it made a lot of fun to work with you at it.",
     initials: 'MT',
     avatarColor: 'bg-purple-500',
   },
@@ -58,6 +58,13 @@ const testimonials: Testimonial[] = [
     content: 'Just built a Dune Weaver Mini! Overall, very happy with it -- Thanks Tuan for sharing this awesome project with us!',
     initials: 'L',
     avatarColor: 'bg-green-500',
+  },
+  {
+    name: 'Chiumanfu',
+    role: 'Maker',
+    content: "I have give you credit for a very well thought out design... one of the best DIY designs I've come across!",
+    initials: 'C',
+    avatarColor: 'bg-blue-500',
   },
 ];
 
