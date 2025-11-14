@@ -4,9 +4,9 @@ import { Section } from './Section';
 
 // Configuration for hero videos
 const HERO_VIDEOS = [
-  '/videos/hero/video1.mov',
-  '/videos/hero/video2.mov',
-  '/videos/hero/video3.mov',
+  '/videos/hero/video1.mp4',
+  '/videos/hero/video2.mp4',
+  '/videos/hero/video3.mp4',
 ];
 
 const INITIAL_IMAGE = '/images/hero-dune-weaver.jpeg';

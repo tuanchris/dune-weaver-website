@@ -5,9 +5,9 @@ This folder contains the background videos for the hero section.
 ## Usage
 
 Place your hero background videos here with the following naming convention:
-- `video1.mov` - First video in the cycle
-- `video2.mov` - Second video in the cycle
-- `video3.mov` - Third video in the cycle
+- `video1.mp4` - First video in the cycle
+- `video2.mp4` - Second video in the cycle
+- `video3.mp4` - Third video in the cycle
 
 ## How It Works
 
@@ -26,7 +26,7 @@ For optimal performance and user experience:
 - **File Size**: Keep under 10MB per video for faster loading
 - **Compression**: Use moderate compression to balance quality and file size
 
-**Note**: The component automatically detects video format (.mov or .mp4) and sets the appropriate MIME type.
+**Note**: The component automatically detects video format (.mp4 or .mp4) and sets the appropriate MIME type.
 
 ## Adding/Removing Videos
 
@@ -34,9 +34,9 @@ To add or remove videos, edit the `HERO_VIDEOS` array in `/components/HeroSectio
 
 ```typescript
 const HERO_VIDEOS = [
-  '/videos/hero/video1.mov',
-  '/videos/hero/video2.mov',
-  '/videos/hero/video3.mov',
+  '/videos/hero/video1.mp4',
+  '/videos/hero/video2.mp4',
+  '/videos/hero/video3.mp4',
   // Add more videos here...
 ];
 ```
