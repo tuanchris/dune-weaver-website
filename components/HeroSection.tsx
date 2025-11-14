@@ -140,26 +140,20 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Background Videos - cycle after image */}
-      {HERO_VIDEOS.map((videoSrc, index) => {
-        // Determine video type from file extension
-        const videoType = videoSrc.endsWith('.mov') ? 'video/quicktime' : 'video/mp4';
-
-        return (
-          <video
-            key={videoSrc}
-            ref={(el) => (videoRefs.current[index] = el)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            preload={index === 0 ? 'auto' : 'metadata'}
-          >
-            <source src={videoSrc} type={videoType} />
-          </video>
-        );
-      })}
+      {HERO_VIDEOS.map((videoSrc, index) => (
+        <video
+          key={videoSrc}
+          ref={(el) => (videoRefs.current[index] = el)}
+          src={videoSrc}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          preload={index === 0 ? 'auto' : 'metadata'}
+        />
+      ))}
 
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-black/20"></div>
