@@ -1,16 +1,91 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './Button';
 import { Section } from './Section';
 
+// Configuration for hero videos
+const HERO_VIDEOS = [
+  '/videos/hero/video1.mp4',
+  '/videos/hero/video2.mp4',
+  '/videos/hero/video3.mp4',
+];
+
+const INITIAL_IMAGE = '/images/hero-dune-weaver.jpeg';
+const IMAGE_DISPLAY_DURATION = 5000; // 5 seconds
+const VIDEO_TRANSITION_DURATION = 1000; // 1 second crossfade
+
 export const HeroSection: React.FC = () => {
+  const [showImage, setShowImage] = useState(true);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    // After 5 seconds, transition from image to video
+    const imageTimer = setTimeout(() => {
+      if (isVideoReady) {
+        setShowImage(false);
+      }
+    }, IMAGE_DISPLAY_DURATION);
+
+    return () => clearTimeout(imageTimer);
+  }, [isVideoReady]);
+
+  useEffect(() => {
+    // Preload and setup first video
+    if (videoRefs.current[0]) {
+      videoRefs.current[0].load();
+
+      const handleCanPlay = () => {
+        setIsVideoReady(true);
+      };
+
+      videoRefs.current[0].addEventListener('canplay', handleCanPlay);
+
+      return () => {
+        if (videoRefs.current[0]) {
+          videoRefs.current[0].removeEventListener('canplay', handleCanPlay);
+        }
+      };
+    }
+  }, []);
+
+  const handleVideoEnd = () => {
+    // Cycle to next video
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % HERO_VIDEOS.length);
+  };
+
   return (
     <div className="relative w-full h-screen min-h-[600px] overflow-hidden">
-      {/* Background Image */}
-      <img
-        src="/images/hero-dune-weaver.jpeg"
-        alt="Dune Weaver kinetic sand art"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* Background Image - shown for first 5 seconds */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          showImage ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <img
+          src={INITIAL_IMAGE}
+          alt="Dune Weaver kinetic sand art"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Background Videos - cycle after image */}
+      {HERO_VIDEOS.map((videoSrc, index) => (
+        <video
+          key={videoSrc}
+          ref={(el) => (videoRefs.current[index] = el)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          autoPlay={index === currentVideoIndex && !showImage}
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          preload={index === 0 ? 'auto' : 'metadata'}
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ))}
 
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-black/20"></div>
