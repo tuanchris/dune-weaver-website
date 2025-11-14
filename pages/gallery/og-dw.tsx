@@ -5,12 +5,16 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import fs from 'fs/promises';
 import path from 'path';
+import sizeOf from 'image-size';
 
 interface GalleryMedia {
   filename: string;
   alt: string;
   src: string;
   type: 'image' | 'video';
+  width?: number;
+  height?: number;
+  aspectRatio?: number;
 }
 
 interface Props {
@@ -37,7 +41,7 @@ export async function getStaticProps() {
     mediaFiles.sort();
 
     // Create media objects
-    const media: GalleryMedia[] = mediaFiles.map(filename => {
+    const media: GalleryMedia[] = await Promise.all(mediaFiles.map(async filename => {
       // Convert filename to readable alt text
       const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
       const alt = nameWithoutExt
@@ -46,15 +50,39 @@ export async function getStaticProps() {
 
       // Determine if file is image or video
       const lowerFile = filename.toLowerCase();
-      const type = videoExtensions.some(ext => lowerFile.endsWith(ext)) ? 'video' : 'image';
+      const type: 'image' | 'video' = videoExtensions.some(ext => lowerFile.endsWith(ext)) ? 'video' : 'image';
 
-      return {
+      // Get image dimensions for images (not videos)
+      const baseMedia = {
         filename,
         alt,
         src: `/gallery/og-dw/${filename}`,
         type,
       };
-    });
+
+      if (type === 'image') {
+        try {
+          const filePath = path.join(galleryDir, filename);
+          const buffer = await fs.readFile(filePath);
+          const dimensions = sizeOf(buffer);
+          if (dimensions && dimensions.width && dimensions.height) {
+            return {
+              ...baseMedia,
+              width: dimensions.width,
+              height: dimensions.height,
+              aspectRatio: dimensions.width / dimensions.height,
+            };
+          }
+        } catch (error) {
+          console.warn(`Failed to get dimensions for ${filename}:`, error);
+        }
+        // If dimension reading failed, return with default square aspect ratio
+        return { ...baseMedia, aspectRatio: 1 };
+      } else {
+        // For videos, use 16:9 aspect ratio as default
+        return { ...baseMedia, aspectRatio: 16 / 9 };
+      }
+    }));
 
     return {
       props: {
@@ -132,7 +160,12 @@ export default function OGDWGallery({ media }: Props) {
                   key={item.filename}
                   className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="aspect-square relative bg-gray-100">
+                  <div
+                    className="relative bg-gray-100"
+                    style={{
+                      aspectRatio: item.aspectRatio ? item.aspectRatio.toString() : '1',
+                    }}
+                  >
                     {item.type === 'video' ? (
                       <video
                         src={item.src}

@@ -30,6 +30,7 @@ const tableTypes: TableType[] = [
     id: 'dwmp-mini-pro',
     name: 'Dune Weaver Mini Pro',
     description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
+    image: '/images/dune-weaver-mini-pro.jpg',
     badge: {
       text: '💎 Patreon',
       type: 'patreon',
