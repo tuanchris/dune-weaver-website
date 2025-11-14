@@ -18,6 +18,16 @@ const features: Feature[] = [
     description: 'If it could be 3D printed, it should be. No relying on specialty hardware like timing belts or linear rails when a clever printed solution works better.',
     icon: '🖨️',
   },
+  {
+    title: 'Living Room Ready',
+    description: 'Pass the living room test with whisper-quiet operation and beautiful design. If it looks like a science experiment, it stays in the garage.',
+    icon: '🎨',
+  },
+  {
+    title: 'Affordable to Build',
+    description: 'Whole build comes in around $100-$150 using common parts and an IKEA bowl. No hunting down obscure components or spending a fortune.',
+    icon: '💰',
+  },
 ];
 
 export const FeaturesSection: React.FC = () => {
