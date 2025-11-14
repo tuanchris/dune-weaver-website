@@ -64,10 +64,27 @@ export const HeroSection: React.FC = () => {
         console.log('Video metadata loaded');
       };
 
+      // Log initial state
+      console.log('Video initial readyState:', firstVideo.readyState);
+      console.log('Video src:', firstVideo.currentSrc || 'not set');
+
+      // Check if video is already ready (in case events fired before listeners were attached)
+      if (firstVideo.readyState >= 3) {
+        console.log('Video already ready (readyState:', firstVideo.readyState, ')');
+        setIsVideoReady(true);
+      }
+
       firstVideo.addEventListener('canplay', handleCanPlay);
       firstVideo.addEventListener('error', handleError);
       firstVideo.addEventListener('loadedmetadata', handleLoadedMetadata);
-      firstVideo.load();
+
+      // Trigger load if not already loading
+      if (firstVideo.readyState === 0) {
+        console.log('Calling load() on video');
+        firstVideo.load();
+      } else {
+        console.log('Video already loading or loaded, readyState:', firstVideo.readyState);
+      }
 
       return () => {
         firstVideo.removeEventListener('canplay', handleCanPlay);
