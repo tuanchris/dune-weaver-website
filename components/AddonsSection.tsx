@@ -4,9 +4,9 @@ import { ProductCard, Product } from './ProductCard';
 
 const addons: Product[] = [
   {
-    name: 'Customize Your Dune Weaver',
+    name: 'Customize Your Dune Weaver Pro',
     image: '/images/customize-addon.jpg',
-    description: 'Personalize your Dune Weaver with custom designs, colors, and configurations. Make it uniquely yours with our comprehensive customization guide.',
+    description: 'Personalize the enclosure of your Dune Weaver Pro. No re-print needed.',
     badge: {
       text: '💎 Patreon',
       type: 'patreon',
@@ -17,7 +17,7 @@ const addons: Product[] = [
   {
     name: 'Desert Compass',
     image: '/images/desert-compass.jpg',
-    description: 'An elegant accessory for your Dune Weaver. This beautiful addition enhances the aesthetic of your sand table while adding a unique decorative element.',
+    description: 'Keep pattern orientation automatically. Desert Compass gives your table a repeatable, absolute “zero” angle using a simple reed switch/hall effect sensors + magnets',
     badge: {
       text: '💎 Patreon',
       type: 'patreon',
@@ -39,7 +39,7 @@ export const AddonsSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
         {addons.map((addon, index) => (
           <ProductCard key={index} product={addon} />
         ))}
