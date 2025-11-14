@@ -11,27 +11,27 @@ interface CommunityLink {
 
 const communityLinks: CommunityLink[] = [
   {
-    name: 'GitHub',
-    description: 'Explore the source code, report issues, and contribute',
-    link: '#',
-    icon: '🐙',
-  },
-  {
     name: 'Discord',
     description: 'Join our community, get help, and share your builds',
-    link: '#',
+    link: 'https://discord.com/invite/YZ8PTezVHt',
     icon: '💬',
+  },
+  {
+    name: 'GitHub',
+    description: 'Explore the source code, report issues, and contribute',
+    link: 'https://github.com/tuanchris/dune-weaver/',
+    icon: '🐙',
   },
   {
     name: 'Patreon',
     description: 'Support the project and get access to premium builds',
-    link: '#',
+    link: 'https://www.patreon.com/cw/duneweaver/shop',
     icon: '💎',
   },
   {
     name: 'MakerWorld',
     description: 'Download free models and see community remixes',
-    link: '#',
+    link: 'https://makerworld.com/en/@tuanchris',
     icon: '🔧',
   },
 ];
