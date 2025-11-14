@@ -49,6 +49,26 @@ export const HeroSection: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Play current video when showImage becomes false or when currentVideoIndex changes
+    if (!showImage && videoRefs.current[currentVideoIndex]) {
+      const currentVideo = videoRefs.current[currentVideoIndex];
+
+      // Reset and play the current video
+      currentVideo.currentTime = 0;
+      currentVideo.play().catch((error) => {
+        console.error('Error playing video:', error);
+      });
+
+      // Pause other videos
+      videoRefs.current.forEach((video, index) => {
+        if (video && index !== currentVideoIndex) {
+          video.pause();
+        }
+      });
+    }
+  }, [showImage, currentVideoIndex]);
+
   const handleVideoEnd = () => {
     // Cycle to next video
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % HERO_VIDEOS.length);
@@ -81,7 +101,6 @@ export const HeroSection: React.FC = () => {
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
             }`}
-            autoPlay={index === currentVideoIndex && !showImage}
             muted
             playsInline
             onEnded={handleVideoEnd}
