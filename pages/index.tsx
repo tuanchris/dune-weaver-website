@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
+import { FeaturesSection } from '@/components/FeaturesSection';
 import { ProductsSection } from '@/components/ProductsSection';
 import { AddonsSection } from '@/components/AddonsSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
@@ -21,6 +22,7 @@ export default function Home() {
       <main className="min-h-screen pt-16">
         <HeroSection />
         <AboutSection />
+        <FeaturesSection />
         <ProductsSection />
         <AddonsSection />
         <TestimonialsSection />
