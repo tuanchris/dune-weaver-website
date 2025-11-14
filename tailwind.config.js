@@ -48,28 +48,28 @@ module.exports = {
             800: '#8B5229',
             900: '#6F4E37',
           },
-          // Text colors
+          // Text colors (inverted for dark theme)
           text: {
-            primary: '#111827',    // gray-900
-            secondary: '#4b5563',  // gray-600
-            tertiary: '#6b7280',   // gray-500
-            inverse: '#ffffff',    // white
-            muted: '#9ca3af',      // gray-400
+            primary: '#f9fafb',    // light gray for primary text
+            secondary: '#d1d5db',  // medium-light gray for secondary text
+            tertiary: '#9ca3af',   // medium gray for tertiary text
+            inverse: '#111827',    // dark for inverse (on light backgrounds)
+            muted: '#6b7280',      // muted gray
           },
-          // Background colors
+          // Background colors (dark theme)
           background: {
-            primary: '#ffffff',    // white
-            secondary: '#f9fafb',  // gray-50
-            tertiary: '#FFF9F0',   // sand-50 (warm off-white)
-            dark: '#111827',       // gray-900
+            primary: '#0f0f0f',    // very dark gray/black
+            secondary: '#1a1a1a',  // dark gray
+            tertiary: '#262626',   // lighter dark gray
+            dark: '#0a0a0a',       // almost black
             overlay: '#000000',    // black (used with opacity)
           },
-          // Border colors
+          // Border colors (lighter for dark theme)
           border: {
-            light: '#f3f4f6',      // gray-100
-            DEFAULT: '#e5e7eb',    // gray-200
-            medium: '#d1d5db',     // gray-300
-            dark: '#9ca3af',       // gray-400
+            light: '#262626',      // dark gray
+            DEFAULT: '#404040',    // medium-dark gray
+            medium: '#525252',     // medium gray
+            dark: '#737373',       // lighter gray
             accent: '#C17940',     // Updated to match new accent-600
           },
           // Status/badge colors
