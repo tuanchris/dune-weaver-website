@@ -1,18 +1,20 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { getAllDocuments, getDocumentsByTableType, Document, GroupedDocuments } from '@/lib/docs';
+import { getAllDocuments, getDocumentsByTableType, Document, GroupedDocuments, getAllBuildPaths, BuildPath as BuildPathType } from '@/lib/docs';
 import { Section } from '@/components/Section';
 import { Button } from '@/components/Button';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { BuildPath } from '@/components/BuildPath';
 
 interface DocsPageProps {
   groupedDocuments: GroupedDocuments;
   allDocuments: Document[];
+  buildPaths: BuildPathType[];
 }
 
-export default function DocsPage({ groupedDocuments, allDocuments }: DocsPageProps) {
+export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }: DocsPageProps) {
   // Define the order of table types
   const tableTypeOrder = ['General', 'Dune Weaver Pro', 'Dune Weaver Mini Pro'];
   const sortedTableTypes = tableTypeOrder.filter(type => groupedDocuments[type]);
@@ -45,8 +47,27 @@ export default function DocsPage({ groupedDocuments, allDocuments }: DocsPagePro
         </div>
       </Section>
 
+      {/* Build Paths */}
+      {buildPaths.length > 0 && (
+        <Section background="gray">
+          <div className="py-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Build Paths</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Follow our step-by-step guides to build your Dune Weaver table from start to finish
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {buildPaths.map((buildPath) => (
+                <BuildPath key={buildPath.id} buildPath={buildPath} />
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
+
       {/* All Documents */}
-      <Section background="gray">
+      <Section background="white">
         <div className="py-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">All Documents</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -58,7 +79,7 @@ export default function DocsPage({ groupedDocuments, allDocuments }: DocsPagePro
       </Section>
 
       {/* Documents by Table Type */}
-      <Section background="white">
+      <Section background="gray">
         <div className="py-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Browse by Table Type</h2>
 
@@ -127,11 +148,13 @@ function DocumentCard({ document }: DocumentCardProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const groupedDocuments = getDocumentsByTableType();
   const allDocuments = getAllDocuments();
+  const buildPaths = getAllBuildPaths();
 
   return {
     props: {
       groupedDocuments,
       allDocuments,
+      buildPaths,
     },
   };
 };
