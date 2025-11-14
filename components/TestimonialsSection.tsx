@@ -11,46 +11,53 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Sarah Chen',
-    role: 'Maker & Artist',
-    content: 'The Dune Weaver has become the centerpiece of my studio. Watching it create intricate patterns is incredibly meditative, and my clients are always mesmerized by it.',
-    initials: 'SC',
-    avatarColor: 'bg-blue-500',
-  },
-  {
-    name: 'Michael Torres',
-    role: 'Hobbyist',
-    content: 'Building my own Dune Weaver was one of the most rewarding projects I\'ve done. The documentation is excellent, and the community is incredibly helpful.',
-    initials: 'MT',
+    name: 'Likandoo',
+    role: 'Maker',
+    content: 'Everything worked flawlessly. The Table looks even better than expected and the patterns are so Beautiful  😄',
+    initials: 'LD',
     avatarColor: 'bg-green-500',
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Interior Designer',
-    content: 'I\'ve installed Dune Weavers in several office spaces. They create a calming atmosphere and serve as beautiful conversation pieces that never get old.',
-    initials: 'ER',
+    name: 'RealGoose',
+    role: 'Maker',
+    content: 'Sharing an update on this DW Mini. Started running 3/20/25 and has been running 24/7 on my desk at work. That’s 3,864 hours and counting!',
+    initials: 'RG',
+    avatarColor: 'bg-blue-500',
+  },
+  {
+    name: 'm8tec',
+    role: 'Maker',
+    content: 'Family sending images in the group chat every time they see a nice pattern 😀',
+    initials: 'MT',
     avatarColor: 'bg-purple-500',
   },
   {
-    name: 'David Park',
-    role: 'Tech Enthusiast',
-    content: 'As someone who loves both art and technology, the Dune Weaver is perfect. The blend of mechanical precision and organic patterns is absolutely fascinating.',
-    initials: 'DP',
+    name: 'MaxVonEvil',
+    role: 'Maker',
+    content: 'So, a colleague of mine have been building our duneweaver tables in tandem for the last couple of weeks when time allowed. It was a super fun project where we both learned a lot. ',
+    initials: 'MV',
     avatarColor: 'bg-amber-500',
   },
   {
-    name: 'Jessica Liu',
-    role: 'Wellness Coach',
-    content: 'I use my Dune Weaver in my meditation space. The gentle movement and evolving patterns help my clients achieve deeper states of relaxation.',
-    initials: 'JL',
+    name: 'Aaron N',
+    role: 'Maker',
+    content: 'Thank you for the awesome work on this project! The Duneweaver software is working great and my wife has even allowed me to put it in the living room! ',
+    initials: 'AN',
     avatarColor: 'bg-pink-500',
   },
   {
-    name: 'Robert Anderson',
-    role: 'Educator',
-    content: 'Our school\'s Dune Weaver has become a powerful teaching tool. Students learn about mathematics, patterns, and engineering while being completely engaged.',
-    initials: 'RA',
+    name: 'M0neyM',
+    role: 'Maker',
+    content: 'Finished Pro, so appreciative of this project and all the help through discord. ',
+    initials: 'MM',
     avatarColor: 'bg-indigo-500',
+  },
+  {
+    name: 'Loc',
+    role: 'Maker',
+    content: 'Just built a Dune Weaver Mini! Overall, very happy with it -- Thanks Tuan for sharing this awesome project with us!',
+    initials: 'L',
+    avatarColor: 'bg-green-500',
   },
 ];
 
@@ -140,10 +147,10 @@ export const TestimonialsSection: React.FC = () => {
     <Section id="testimonials" background="sand">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          What People Are Saying
+          What Makers Are Saying
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Hear from the makers and enthusiasts who have brought Dune Weaver into their lives.
+          Hear from the makers who have brought Dune Weaver into their lives.
         </p>
       </div>
 
