@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { AboutHeroSection } from '@/components/AboutHeroSection';
+import { Section } from '@/components/Section';
 
 export default function About() {
   return (
@@ -13,16 +15,9 @@ export default function About() {
       <Header />
 
       <main className="min-h-screen pt-16">
+        <AboutHeroSection />
+
         <div className="container mx-auto px-4 py-16 max-w-4xl">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
-              About Dune Weaver
-            </h1>
-            <p className="text-xl text-gray-600">
-              Creating mesmerizing art through technology and sand
-            </p>
-          </div>
 
           {/* What is Dune Weaver */}
           <section className="mb-16">
