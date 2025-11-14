@@ -178,45 +178,36 @@ export default function DWMiniGallery({ media }: Props) {
 
           {/* Gallery Grid */}
           {hasMedia ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-7xl mx-auto space-y-6">
               {media.map((item) => (
                 <div
                   key={item.filename}
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer break-inside-avoid mb-6"
                   onClick={() => setSelectedMedia(item)}
                 >
-                  <div
-                    className="relative bg-gray-100 overflow-hidden"
-                    style={{
-                      aspectRatio: item.aspectRatio ? item.aspectRatio.toString() : '1',
-                    }}
-                  >
-                    {item.type === 'video' ? (
-                      <video
-                        src={item.src}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        preload="metadata"
-                        muted
-                        loop
-                        onMouseEnter={(e) => e.currentTarget.play()}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.pause();
-                          e.currentTarget.currentTime = 0;
-                        }}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                    )}
-                  </div>
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.src}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      preload="metadata"
+                      muted
+                      loop
+                      onMouseEnter={(e) => e.currentTarget.play()}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.pause();
+                        e.currentTarget.currentTime = 0;
+                      }}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               ))}
             </div>
