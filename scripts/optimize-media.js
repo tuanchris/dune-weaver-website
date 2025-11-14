@@ -10,6 +10,7 @@ const execAsync = promisify(exec);
 
 // Configuration
 const IMAGE_QUALITY = 85; // Quality for JPEG/WebP (1-100)
+const MAX_WIDTH = 1920; // Maximum width for images (maintains aspect ratio)
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 const VIDEO_EXTENSIONS = ['.mov', '.mp4', '.avi', '.mkv'];
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
@@ -54,11 +55,25 @@ async function optimizeImage(filePath) {
   const originalSize = getFileSizeKB(filePath);
 
   try {
-    const image = sharp(filePath);
+    let image = sharp(filePath);
     const metadata = await image.metadata();
+
+    const originalDimensions = `${metadata.width}x${metadata.height}`;
+    let needsResize = metadata.width > MAX_WIDTH;
+    let resizeInfo = '';
 
     // Create a temporary output path
     const tempPath = filePath + '.tmp';
+
+    // Resize if needed
+    if (needsResize) {
+      const newHeight = Math.round((MAX_WIDTH / metadata.width) * metadata.height);
+      image = image.resize(MAX_WIDTH, newHeight, {
+        fit: 'inside',
+        withoutEnlargement: true
+      });
+      resizeInfo = ` [${originalDimensions}→${MAX_WIDTH}x${newHeight}]`;
+    }
 
     // Optimize based on format
     if (ext === '.png') {
@@ -87,11 +102,11 @@ async function optimizeImage(filePath) {
     if (parseFloat(newSize) < parseFloat(originalSize)) {
       fs.renameSync(tempPath, filePath);
       const savings = ((originalSize - newSize) / originalSize * 100).toFixed(1);
-      console.log(`✅ ${path.relative(PUBLIC_DIR, filePath)}: ${originalSize}KB → ${newSize}KB (${savings}% smaller)`);
+      console.log(`✅ ${path.relative(PUBLIC_DIR, filePath)}: ${originalSize}KB → ${newSize}KB (${savings}% smaller)${resizeInfo}`);
     } else {
       // New file is larger, keep original
       fs.unlinkSync(tempPath);
-      console.log(`⏭️  ${path.relative(PUBLIC_DIR, filePath)}: Already optimized (${originalSize}KB)`);
+      console.log(`⏭️  ${path.relative(PUBLIC_DIR, filePath)}: Already optimized (${originalSize}KB)${resizeInfo ? ` ${originalDimensions}` : ''}`);
     }
   } catch (error) {
     console.error(`❌ Error optimizing ${filePath}:`, error.message);

@@ -5,9 +5,10 @@ This script optimizes all images and videos in the `public` directory for web us
 ## Features
 
 - **Image Optimization**: Compresses JPG, PNG, and WebP images while maintaining quality
+- **Smart Resizing**: Automatically resizes images wider than 1920px to optimize for web display
 - **Video Optimization**: Converts and compresses videos to web-optimized MP4 format (requires FFmpeg)
 - **In-place Replacement**: Replaces original files with optimized versions
-- **Progress Logging**: Shows size reduction for each file
+- **Progress Logging**: Shows size reduction and dimension changes for each file
 
 ## Installation
 
@@ -48,6 +49,7 @@ node scripts/optimize-media.js gallery/dwp-pro
 ## What it does
 
 ### Images (JPG, PNG, WebP)
+- Resizes images wider than 1920px (maintains aspect ratio)
 - Compresses images to 85% quality
 - Uses progressive encoding for JPEGs
 - Maintains original format
