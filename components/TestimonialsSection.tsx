@@ -115,7 +115,7 @@ export const TestimonialsSection: React.FC = () => {
           scrollToIndex(newIndex);
           return newIndex;
         });
-      }, 5000); // Change testimonial every 5 seconds
+      }, 3000); // Change testimonial every 3 seconds
     }
 
     return () => {
