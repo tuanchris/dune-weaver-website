@@ -11,9 +11,9 @@ Place your hero background videos here with the following naming convention:
 
 ## How It Works
 
-1. **Initial Display**: The hero section starts with a still image (`/images/hero-dune-weaver.jpeg`) for 5 seconds
-2. **Video Preloading**: During those 5 seconds, the first video is preloaded in the background
-3. **Smooth Transition**: After 5 seconds, the image fades out and the first video fades in
+1. **Initial Display**: The hero section briefly shows a still image (`/images/hero-dune-weaver.jpeg`) while loading
+2. **Video Loading**: The first video is preloaded in the background
+3. **Smooth Transition**: As soon as the video is ready, the image fades out and the first video fades in
 4. **Cycling**: When each video ends, it automatically cycles to the next video with a smooth crossfade transition
 
 ## Video Recommendations

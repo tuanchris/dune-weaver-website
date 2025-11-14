@@ -10,7 +10,6 @@ const HERO_VIDEOS = [
 ];
 
 const INITIAL_IMAGE = '/images/hero-dune-weaver.jpeg';
-const IMAGE_DISPLAY_DURATION = 5000; // 5 seconds
 const VIDEO_TRANSITION_DURATION = 1000; // 1 second crossfade
 
 export const HeroSection: React.FC = () => {
@@ -25,19 +24,11 @@ export const HeroSection: React.FC = () => {
   }, [showImage, isVideoReady, currentVideoIndex]);
 
   useEffect(() => {
-    // After 5 seconds, transition from image to video
-    console.log('Setting timer for image transition. isVideoReady:', isVideoReady);
-    const imageTimer = setTimeout(() => {
-      console.log('Timer fired. isVideoReady:', isVideoReady);
-      if (isVideoReady) {
-        console.log('Transitioning from image to video');
-        setShowImage(false);
-      } else {
-        console.log('Video not ready yet, staying on image');
-      }
-    }, IMAGE_DISPLAY_DURATION);
-
-    return () => clearTimeout(imageTimer);
+    // Transition from image to video as soon as video is ready
+    if (isVideoReady) {
+      console.log('Video ready, transitioning from image to video');
+      setShowImage(false);
+    }
   }, [isVideoReady]);
 
   useEffect(() => {
