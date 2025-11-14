@@ -6,14 +6,15 @@ import { Footer } from '@/components/Footer';
 import fs from 'fs/promises';
 import path from 'path';
 
-interface GalleryImage {
+interface GalleryMedia {
   filename: string;
   alt: string;
   src: string;
+  type: 'image' | 'video';
 }
 
 interface Props {
-  images: GalleryImage[];
+  media: GalleryMedia[];
 }
 
 export async function getStaticProps() {
@@ -22,47 +23,56 @@ export async function getStaticProps() {
   try {
     const files = await fs.readdir(galleryDir);
 
-    // Filter for image files
+    // Filter for image and video files
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
-    const imageFiles = files.filter(file =>
-      imageExtensions.some(ext => file.toLowerCase().endsWith(ext))
-    );
+    const videoExtensions = ['.mp4', '.webm', '.mov', '.avi'];
+
+    const mediaFiles = files.filter(file => {
+      const lowerFile = file.toLowerCase();
+      return imageExtensions.some(ext => lowerFile.endsWith(ext)) ||
+             videoExtensions.some(ext => lowerFile.endsWith(ext));
+    });
 
     // Sort alphabetically
-    imageFiles.sort();
+    mediaFiles.sort();
 
-    // Create image objects
-    const images: GalleryImage[] = imageFiles.map(filename => {
+    // Create media objects
+    const media: GalleryMedia[] = mediaFiles.map(filename => {
       // Convert filename to readable alt text
       const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
       const alt = nameWithoutExt
         .replace(/[-_]/g, ' ')
         .replace(/\b\w/g, c => c.toUpperCase());
 
+      // Determine if file is image or video
+      const lowerFile = filename.toLowerCase();
+      const type = videoExtensions.some(ext => lowerFile.endsWith(ext)) ? 'video' : 'image';
+
       return {
         filename,
-        alt: `DWMP Mini Pro - ${alt}`,
+        alt,
         src: `/gallery/dwmp-mini-pro/${filename}`,
+        type,
       };
     });
 
     return {
       props: {
-        images,
+        media,
       },
     };
   } catch (error) {
     // If directory doesn't exist or is empty, return empty array
     return {
       props: {
-        images: [],
+        media: [],
       },
     };
   }
 }
 
-export default function DWMPMiniProGallery({ images }: Props) {
-  const hasImages = images.length > 0;
+export default function DWMPMiniProGallery({ media }: Props) {
+  const hasMedia = media.length > 0;
 
   return (
     <>
@@ -115,26 +125,33 @@ export default function DWMPMiniProGallery({ images }: Props) {
           </div>
 
           {/* Gallery Grid */}
-          {hasImages ? (
+          {hasMedia ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {images.map((image) => (
+              {media.map((item) => (
                 <div
-                  key={image.filename}
+                  key={item.filename}
                   className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="aspect-square relative bg-gray-100">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900">{image.alt}</h3>
-                    <p className="text-sm text-gray-500">DWMP Mini Pro</p>
+                    {item.type === 'video' ? (
+                      <video
+                        src={item.src}
+                        controls
+                        className="w-full h-full object-cover"
+                        preload="metadata"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
+                        loading="lazy"
+                      />
+                    )}
                   </div>
                 </div>
               ))}
