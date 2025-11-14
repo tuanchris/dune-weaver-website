@@ -49,6 +49,51 @@ export default function About() {
             </div>
           </section>
 
+          {/* Why Choose Dune Weaver */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Why Choose Dune Weaver?
+            </h2>
+            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span>
+                    <strong>Affordable:</strong> Build your own for a fraction
+                    of the cost of commercial alternatives
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span>
+                    <strong>Open Source:</strong> Full access to designs, code,
+                    and community support
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span>
+                    <strong>Customizable:</strong> Modify and personalize your
+                    build to suit your preferences
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span>
+                    <strong>Educational:</strong> Learn about electronics,
+                    programming, and mechanical design
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span>
+                    <strong>Community Driven:</strong> Active Discord community
+                    for support and inspiration
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </section>
           {/* Design Philosophy */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -236,52 +281,6 @@ export default function About() {
                   .
                 </p>
               </div>
-            </div>
-          </section>
-
-          {/* Why Choose Dune Weaver */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Why Choose Dune Weaver?
-            </h2>
-            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Affordable:</strong> Build your own for a fraction
-                    of the cost of commercial alternatives
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Open Source:</strong> Full access to designs, code,
-                    and community support
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Customizable:</strong> Modify and personalize your
-                    build to suit your preferences
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Educational:</strong> Learn about electronics,
-                    programming, and mechanical design
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Community Driven:</strong> Active Discord community
-                    for support and inspiration
-                  </span>
-                </li>
-              </ul>
             </div>
           </section>
 
