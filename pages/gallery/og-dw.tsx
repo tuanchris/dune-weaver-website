@@ -73,7 +73,7 @@ export default function OGDWGallery({ images }: Props) {
 
       <Header />
 
-      <main className="min-h-screen pt-16 bg-gray-50">
+      <main className="min-h-screen pt-16 bg-sand-50">
         <div className="container mx-auto px-4 py-16">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -108,7 +108,7 @@ export default function OGDWGallery({ images }: Props) {
                 MakerWorld
               </span>
             </div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-sand-700 max-w-2xl mx-auto">
               The original open-source Dune Weaver design. A proven build with a passionate
               community creating innovative patterns.
             </p>
@@ -122,7 +122,7 @@ export default function OGDWGallery({ images }: Props) {
                   key={image.filename}
                   className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="aspect-square relative bg-gray-100">
+                  <div className="aspect-square relative bg-sand-100">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -134,7 +134,7 @@ export default function OGDWGallery({ images }: Props) {
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold text-sand-900">{image.alt}</h3>
-                    <p className="text-sm text-gray-500">OG DW</p>
+                    <p className="text-sm text-sand-600">OG DW</p>
                   </div>
                 </div>
               ))}
@@ -143,7 +143,7 @@ export default function OGDWGallery({ images }: Props) {
             <div className="text-center py-16">
               <div className="max-w-md mx-auto">
                 <svg
-                  className="w-24 h-24 mx-auto text-gray-300 mb-4"
+                  className="w-24 h-24 mx-auto text-sand-400 mb-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -155,9 +155,9 @@ export default function OGDWGallery({ images }: Props) {
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <p className="text-xl text-gray-500 mb-2">No images yet</p>
-                <p className="text-gray-400">
-                  Add images to <code className="px-2 py-1 bg-gray-100 rounded text-sm">public/gallery/og-dw/</code> and rebuild
+                <p className="text-xl text-sand-600 mb-2">No images yet</p>
+                <p className="text-sand-500">
+                  Add images to <code className="px-2 py-1 bg-sand-100 rounded text-sm">public/gallery/og-dw/</code> and rebuild
                 </p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function OGDWGallery({ images }: Props) {
               <h2 className="text-2xl font-bold text-sand-900 mb-4">
                 Share Your Creations
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-sand-700 mb-6">
                 Have you created amazing patterns with your OG DW? Share them with
                 the community and get featured in our gallery!
               </p>
