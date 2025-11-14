@@ -62,13 +62,13 @@ export default function Gallery() {
 
       <Header />
 
-      <main className="min-h-screen pt-16 bg-sand-50">
+      <main className="min-h-screen pt-16 bg-sand-900">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-sand-700 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-sand-200 mb-4">
               Gallery
             </h1>
-            <p className="text-lg text-sand-700 max-w-2xl mx-auto">
+            <p className="text-lg text-sand-200 max-w-2xl mx-auto">
               Explore stunning sand art patterns created by our community. Choose a table type to see what it can create.
             </p>
           </div>
@@ -78,11 +78,11 @@ export default function Gallery() {
               <Link
                 key={table.id}
                 href={`/gallery/${table.id}`}
-                className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group bg-sand-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <h2 className="text-2xl font-bold text-sand-900 group-hover:text-sand-600 transition-colors">
+                    <h2 className="text-2xl font-bold text-sand-50 group-hover:text-sand-300 transition-colors">
                       {table.name}
                     </h2>
                     <span
@@ -95,8 +95,8 @@ export default function Gallery() {
                       {table.badge.text}
                     </span>
                   </div>
-                  <p className="text-sand-700 mb-4">{table.description}</p>
-                  <div className="flex items-center text-sand-600 font-semibold group-hover:translate-x-2 transition-transform">
+                  <p className="text-sand-200 mb-4">{table.description}</p>
+                  <div className="flex items-center text-sand-300 font-semibold group-hover:translate-x-2 transition-transform">
                     View Gallery
                     <svg
                       className="w-5 h-5 ml-2"
@@ -113,7 +113,7 @@ export default function Gallery() {
                     </svg>
                   </div>
                 </div>
-                <div className="h-48 bg-gradient-to-br from-sand-100 to-sand-200 flex items-center justify-center text-sand-500">
+                <div className="h-48 bg-gradient-to-br from-sand-800 to-sand-700 flex items-center justify-center text-sand-400">
                   <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>

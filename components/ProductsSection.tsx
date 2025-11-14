@@ -53,10 +53,10 @@ export const ProductsSection: React.FC = () => {
   return (
     <Section id="products" background="gray">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-sand-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-sand-50 mb-4">
           Choose Your Dune Weaver
         </h2>
-        <p className="text-lg text-sand-700 max-w-2xl mx-auto">
+        <p className="text-lg text-sand-200 max-w-2xl mx-auto">
           From free open-source designs to premium builds, there's a Dune Weaver for everyone.
         </p>
       </div>

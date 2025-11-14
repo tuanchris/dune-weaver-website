@@ -24,16 +24,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-full border border-sand-100 hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-sand-900 rounded-xl shadow-lg p-6 flex flex-col h-full border border-sand-700 hover:shadow-xl transition-shadow duration-200">
       <div className="mb-4">
-        <h3 className="text-xl font-bold text-sand-900 mb-2">{product.name}</h3>
+        <h3 className="text-xl font-bold text-sand-50 mb-2">{product.name}</h3>
         <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeStyles[product.badge.type]}`}>
           {product.badge.text}
         </span>
       </div>
 
       {product.image && (
-        <div className="mb-4 rounded-lg overflow-hidden bg-sand-100 aspect-square flex items-center justify-center">
+        <div className="mb-4 rounded-lg overflow-hidden bg-sand-800 aspect-square flex items-center justify-center">
           <img
             src={product.image}
             alt={product.name}
@@ -42,7 +42,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       )}
 
-      <p className="text-sand-700 mb-6 flex-grow">
+      <p className="text-sand-200 mb-6 flex-grow">
         {product.description}
       </p>
 

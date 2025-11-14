@@ -73,13 +73,13 @@ export default function DWMPMiniProGallery({ images }: Props) {
 
       <Header />
 
-      <main className="min-h-screen pt-16 bg-sand-50">
+      <main className="min-h-screen pt-16 bg-sand-900">
         <div className="container mx-auto px-4 py-16">
           {/* Breadcrumb */}
           <div className="mb-8">
             <Link
               href="/gallery"
-              className="text-sand-600 hover:text-sand-700 flex items-center"
+              className="text-sand-300 hover:text-sand-200 flex items-center"
             >
               <svg
                 className="w-5 h-5 mr-2"
@@ -101,14 +101,14 @@ export default function DWMPMiniProGallery({ images }: Props) {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-sand-700">
+              <h1 className="text-4xl md:text-5xl font-bold text-sand-200">
                 DWMP – Mini Pro
               </h1>
               <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-100 text-purple-700">
                 💎 Patreon
               </span>
             </div>
-            <p className="text-lg text-sand-700 max-w-2xl mx-auto">
+            <p className="text-lg text-sand-200 max-w-2xl mx-auto">
               A compact powerhouse combining portability with professional features.
               Explore beautiful patterns created by the community.
             </p>
@@ -122,7 +122,7 @@ export default function DWMPMiniProGallery({ images }: Props) {
                   key={image.filename}
                   className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="aspect-square relative bg-sand-100">
+                  <div className="aspect-square relative bg-sand-800">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -133,8 +133,8 @@ export default function DWMPMiniProGallery({ images }: Props) {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-sand-900">{image.alt}</h3>
-                    <p className="text-sm text-sand-600">DWMP Mini Pro</p>
+                    <h3 className="font-semibold text-sand-50">{image.alt}</h3>
+                    <p className="text-sm text-sand-300">DWMP Mini Pro</p>
                   </div>
                 </div>
               ))}
@@ -155,9 +155,9 @@ export default function DWMPMiniProGallery({ images }: Props) {
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <p className="text-xl text-sand-600 mb-2">No images yet</p>
-                <p className="text-sand-500">
-                  Add images to <code className="px-2 py-1 bg-sand-100 rounded text-sm">public/gallery/dwmp-mini-pro/</code> and rebuild
+                <p className="text-xl text-sand-300 mb-2">No images yet</p>
+                <p className="text-sand-400">
+                  Add images to <code className="px-2 py-1 bg-sand-800 rounded text-sm">public/gallery/dwmp-mini-pro/</code> and rebuild
                 </p>
               </div>
             </div>
@@ -166,10 +166,10 @@ export default function DWMPMiniProGallery({ images }: Props) {
           {/* Call to Action */}
           <div className="mt-16 text-center">
             <div className="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-sand-900 mb-4">
+              <h2 className="text-2xl font-bold text-sand-50 mb-4">
                 Share Your Creations
               </h2>
-              <p className="text-sand-700 mb-6">
+              <p className="text-sand-200 mb-6">
                 Have you created amazing patterns with your DWMP Mini Pro? Share them with
                 the community and get featured in our gallery!
               </p>

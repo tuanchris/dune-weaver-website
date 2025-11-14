@@ -16,18 +16,18 @@ export default function About() {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-sand-700 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-sand-200 mb-4">
               About Dune Weaver
             </h1>
-            <p className="text-xl text-sand-700">
+            <p className="text-xl text-sand-200">
               Creating mesmerizing art through technology and sand
             </p>
           </div>
 
           {/* What is Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">What is Dune Weaver?</h2>
-            <div className="prose prose-lg max-w-none text-sand-800 space-y-4">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">What is Dune Weaver?</h2>
+            <div className="prose prose-lg max-w-none text-sand-200 space-y-4">
               <p>
                 Dune Weaver is a web-controlled kinetic sand table that creates mesmerizing patterns
                 in sand using a steel ball guided by magnets beneath the surface. It's a motorized
@@ -46,15 +46,15 @@ export default function About() {
 
           {/* Design Philosophy */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">Design Philosophy</h2>
-            <div className="space-y-6 text-sand-800">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">Design Philosophy</h2>
+            <div className="space-y-6 text-sand-200">
               <p className="text-lg leading-relaxed">
                 I wanted this version to nail a few key things:
               </p>
 
               <div className="space-y-4">
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Printability First
                   </h3>
                   <p>
@@ -63,8 +63,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Use What's Already Out There
                   </h3>
                   <p>
@@ -73,8 +73,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Pass the Living Room Test
                   </h3>
                   <p>
@@ -82,8 +82,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Keep the Cost Reasonable
                   </h3>
                   <p>
@@ -93,8 +93,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Silence is Golden
                   </h3>
                   <p>
@@ -103,8 +103,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-sand-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-sand-900 mb-2">
+                <div className="border-l-4 border-sand-500 pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-sand-50 mb-2">
                     Build on What Worked
                   </h3>
                   <p>
@@ -117,9 +117,9 @@ export default function About() {
           </section>
 
           {/* The Experience */}
-          <section className="mb-16 bg-gradient-to-br from-sand-50 to-sand-100 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">The Experience</h2>
-            <div className="text-sand-800 space-y-4">
+          <section className="mb-16 bg-gradient-to-br from-sand-900 to-sand-800 p-8 rounded-xl">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">The Experience</h2>
+            <div className="text-sand-200 space-y-4">
               <p className="text-lg">
                 This isn't just a print-and-forget project. It becomes a presence in your space.
                 People stop by your desk at work asking about it. Kids are transfixed. You'll
@@ -131,16 +131,16 @@ export default function About() {
 
           {/* Why Build Instead of Buying */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">Why Build Instead of Buying?</h2>
-            <div className="bg-white border-2 border-sand-200 rounded-lg p-8">
-              <div className="text-sand-800 space-y-4">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">Why Build Instead of Buying?</h2>
+            <div className="bg-sand-900 border-2 border-sand-700 rounded-lg p-8">
+              <div className="text-sand-200 space-y-4">
                 <p className="text-lg">
                   When you build the Dune Weaver, you get the satisfaction of creating something
                   with your own hands. You understand exactly how it works (so you can fix or
                   modify anything), and you're building on an open platform that you truly own.
                 </p>
                 <p>
-                  <strong className="text-sand-700">No cloud dependencies. No subscription fees.
+                  <strong className="text-sand-200">No cloud dependencies. No subscription fees.
                   No planned obsolescence.</strong>
                 </p>
                 <p>
@@ -152,11 +152,11 @@ export default function About() {
           </section>
 
           {/* About the Creator */}
-          <section className="mb-16 bg-gradient-to-br from-sand-50 to-sand-100 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">Meet the Creator</h2>
-            <div className="space-y-4 text-sand-800">
+          <section className="mb-16 bg-gradient-to-br from-sand-900 to-sand-800 p-8 rounded-xl">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">Meet the Creator</h2>
+            <div className="space-y-4 text-sand-200">
               <p className="text-lg">
-                <span className="font-semibold text-sand-700">Tuan Nguyen</span> is a data
+                <span className="font-semibold text-sand-200">Tuan Nguyen</span> is a data
                 professional with a passion for STEM and making. As the creator of Dune Weaver,
                 Tuan has combined his technical expertise with creative vision to bring this
                 mesmerizing kinetic art project to the maker community.
@@ -173,18 +173,18 @@ export default function About() {
                 for makers worldwide to create their own mesmerizing sand art installations
                 at a fraction of the cost of commercial alternatives.
               </p>
-              <div className="mt-6 pt-6 border-t border-sand-200">
-                <p className="text-sm text-sand-700">
+              <div className="mt-6 pt-6 border-t border-sand-700">
+                <p className="text-sm text-sand-200">
                   Connect with Tuan and the Dune Weaver community on{' '}
-                  <a href="https://github.com/tuanchris" className="text-sand-600 hover:text-sand-700 underline">
+                  <a href="https://github.com/tuanchris" className="text-sand-300 hover:text-sand-200 underline">
                     GitHub
                   </a>
                   ,{' '}
-                  <a href="https://makerworld.com/en/@tuanchris" className="text-sand-600 hover:text-sand-700 underline">
+                  <a href="https://makerworld.com/en/@tuanchris" className="text-sand-300 hover:text-sand-200 underline">
                     MakerWorld
                   </a>
                   , and{' '}
-                  <a href="https://www.patreon.com/DuneWeaver" className="text-sand-600 hover:text-sand-700 underline">
+                  <a href="https://www.patreon.com/DuneWeaver" className="text-sand-300 hover:text-sand-200 underline">
                     Patreon
                   </a>
                   .
@@ -195,27 +195,27 @@ export default function About() {
 
           {/* Why Choose Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-sand-900 mb-6">Why Choose Dune Weaver?</h2>
-            <div className="bg-white border-2 border-sand-200 rounded-lg p-8">
-              <ul className="space-y-4 text-sand-800">
+            <h2 className="text-3xl font-bold text-sand-50 mb-6">Why Choose Dune Weaver?</h2>
+            <div className="bg-sand-900 border-2 border-sand-700 rounded-lg p-8">
+              <ul className="space-y-4 text-sand-200">
                 <li className="flex items-start">
-                  <span className="text-sand-600 mr-3 text-xl">✓</span>
+                  <span className="text-sand-300 mr-3 text-xl">✓</span>
                   <span><strong>Affordable:</strong> Build your own for a fraction of the cost of commercial alternatives</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-sand-600 mr-3 text-xl">✓</span>
+                  <span className="text-sand-300 mr-3 text-xl">✓</span>
                   <span><strong>Open Source:</strong> Full access to designs, code, and community support</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-sand-600 mr-3 text-xl">✓</span>
+                  <span className="text-sand-300 mr-3 text-xl">✓</span>
                   <span><strong>Customizable:</strong> Modify and personalize your build to suit your preferences</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-sand-600 mr-3 text-xl">✓</span>
+                  <span className="text-sand-300 mr-3 text-xl">✓</span>
                   <span><strong>Educational:</strong> Learn about electronics, programming, and mechanical design</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-sand-600 mr-3 text-xl">✓</span>
+                  <span className="text-sand-300 mr-3 text-xl">✓</span>
                   <span><strong>Community Driven:</strong> Active Discord community for support and inspiration</span>
                 </li>
               </ul>
@@ -224,11 +224,11 @@ export default function About() {
 
           {/* Call to Action */}
           <section className="text-center">
-            <div className="bg-gradient-to-r from-sand-100 to-sand-200 p-8 rounded-xl">
-              <h2 className="text-2xl font-bold text-sand-900 mb-4">
+            <div className="bg-gradient-to-r from-sand-800 to-sand-700 p-8 rounded-xl">
+              <h2 className="text-2xl font-bold text-sand-50 mb-4">
                 Ready to Build Your Own?
               </h2>
-              <p className="text-sand-800 mb-6">
+              <p className="text-sand-200 mb-6">
                 Explore the different versions and find the perfect Dune Weaver for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -240,7 +240,7 @@ export default function About() {
                 </a>
                 <a
                   href="/#community"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-sand-600 font-semibold rounded-lg border-2 border-sand-600 hover:bg-sand-50 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-sand-300 font-semibold rounded-lg border-2 border-sand-500 hover:bg-sand-900 transition-colors"
                 >
                   Join Community
                 </a>

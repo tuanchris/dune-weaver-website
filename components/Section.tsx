@@ -14,9 +14,9 @@ export const Section: React.FC<SectionProps> = ({
   background = 'white',
 }) => {
   const backgroundStyles = {
-    white: 'bg-white',
-    gray: 'bg-sand-50',
-    sand: 'bg-sand-50',
+    white: 'bg-sand-800',
+    gray: 'bg-sand-900',
+    sand: 'bg-sand-800',
   };
 
   return (
