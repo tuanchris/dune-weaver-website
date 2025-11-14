@@ -16,13 +16,13 @@ export const Footer: React.FC = () => {
             <a href="/about" className="hover:text-white transition-colors">
               About
             </a>
-            <a href="#products" className="hover:text-white transition-colors">
+            <a href="/#products" className="hover:text-white transition-colors">
               Products
             </a>
-            <a href="#community" className="hover:text-white transition-colors">
+            <a href="/#community" className="hover:text-white transition-colors">
               Community
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="https://github.com/tuanchris/dune-weaver/" className="hover:text-white transition-colors">
               GitHub
             </a>
           </div>
