@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
       {HERO_VIDEOS.map((videoSrc, index) => (
         <video
           key={videoSrc}
-          ref={(el) => (videoRefs.current[index] = el)}
+          ref={(el) => { videoRefs.current[index] = el; }}
           src={videoSrc}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             !showImage && index === currentVideoIndex ? 'opacity-100' : 'opacity-0'

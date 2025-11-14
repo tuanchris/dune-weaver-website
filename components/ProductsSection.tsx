@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section } from './Section';
 import { ProductCard, Product } from './ProductCard';
+import { FeatureComparison } from './FeatureComparison';
 
 const products: Product[] = [
   {
@@ -66,6 +67,8 @@ export const ProductsSection: React.FC = () => {
           <ProductCard key={index} product={product} />
         ))}
       </div>
+
+      <FeatureComparison />
     </Section>
   );
 };
