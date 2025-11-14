@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const docsDirectory = path.join(process.cwd(), 'docs');
+const buildPathsFile = path.join(process.cwd(), 'data', 'buildPaths.json');
 
 export interface DocumentMetadata {
   title: string;
@@ -126,4 +127,60 @@ export function searchDocuments(query: string): Document[] {
 
     return titleMatch || descriptionMatch || contentMatch || tableTypeMatch;
   });
+}
+
+/**
+ * Build Path interfaces
+ */
+export interface BuildPathStep {
+  stepNumber: number;
+  title: string;
+  documentSlug: string;
+  description: string;
+}
+
+export interface BuildPath {
+  id: string;
+  title: string;
+  description: string;
+  tableType: string;
+  steps: BuildPathStep[];
+}
+
+export interface BuildPathsData {
+  buildPaths: BuildPath[];
+}
+
+/**
+ * Get all build paths
+ */
+export function getAllBuildPaths(): BuildPath[] {
+  try {
+    if (!fs.existsSync(buildPathsFile)) {
+      return [];
+    }
+
+    const fileContents = fs.readFileSync(buildPathsFile, 'utf8');
+    const data: BuildPathsData = JSON.parse(fileContents);
+    return data.buildPaths || [];
+  } catch (error) {
+    console.error('Error reading build paths:', error);
+    return [];
+  }
+}
+
+/**
+ * Get a single build path by ID
+ */
+export function getBuildPathById(id: string): BuildPath | null {
+  const buildPaths = getAllBuildPaths();
+  return buildPaths.find(path => path.id === id) || null;
+}
+
+/**
+ * Get build paths for a specific table type
+ */
+export function getBuildPathsByTableType(tableType: string): BuildPath[] {
+  const buildPaths = getAllBuildPaths();
+  return buildPaths.filter(path => path.tableType === tableType);
 }
