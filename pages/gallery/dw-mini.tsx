@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import fs from 'fs/promises';
 import path from 'path';
 import sizeOf from 'image-size';
+import { useState, useEffect } from 'react';
 
 interface GalleryMedia {
   filename: string;
@@ -101,6 +102,29 @@ export async function getStaticProps() {
 
 export default function DWMiniGallery({ media }: Props) {
   const hasMedia = media.length > 0;
+  const [selectedMedia, setSelectedMedia] = useState<GalleryMedia | null>(null);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!selectedMedia) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedMedia(null);
+      } else if (e.key === 'ArrowLeft') {
+        const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : media.length - 1;
+        setSelectedMedia(media[prevIndex]);
+      } else if (e.key === 'ArrowRight') {
+        const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+        const nextIndex = currentIndex < media.length - 1 ? currentIndex + 1 : 0;
+        setSelectedMedia(media[nextIndex]);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedMedia, media]);
 
   return (
     <>
@@ -158,10 +182,11 @@ export default function DWMiniGallery({ media }: Props) {
               {media.map((item) => (
                 <div
                   key={item.filename}
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  onClick={() => setSelectedMedia(item)}
                 >
                   <div
-                    className="relative bg-gray-100"
+                    className="relative bg-gray-100 overflow-hidden"
                     style={{
                       aspectRatio: item.aspectRatio ? item.aspectRatio.toString() : '1',
                     }}
@@ -169,9 +194,15 @@ export default function DWMiniGallery({ media }: Props) {
                     {item.type === 'video' ? (
                       <video
                         src={item.src}
-                        controls
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         preload="metadata"
+                        muted
+                        loop
+                        onMouseEnter={(e) => e.currentTarget.play()}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.pause();
+                          e.currentTarget.currentTime = 0;
+                        }}
                       >
                         Your browser does not support the video tag.
                       </video>
@@ -181,7 +212,7 @@ export default function DWMiniGallery({ media }: Props) {
                         alt={item.alt}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover"
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
                         loading="lazy"
                       />
                     )}
@@ -246,6 +277,119 @@ export default function DWMiniGallery({ media }: Props) {
           </div>
         </div>
       </main>
+
+      {/* Lightbox Modal */}
+      {selectedMedia && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+          onClick={() => setSelectedMedia(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={() => setSelectedMedia(null)}
+            aria-label="Close"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {selectedMedia.type === 'video' ? (
+              <video
+                src={selectedMedia.src}
+                controls
+                autoPlay
+                className="w-full h-full max-h-[90vh] object-contain"
+              >
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <div className="relative w-full" style={{ aspectRatio: selectedMedia.aspectRatio || 1 }}>
+                <Image
+                  src={selectedMedia.src}
+                  alt={selectedMedia.alt}
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            )}
+            <div className="text-white text-center mt-4 text-lg">
+              {selectedMedia.alt}
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          {media.length > 1 && (
+            <>
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+                  const prevIndex = currentIndex > 0 ? currentIndex - 1 : media.length - 1;
+                  setSelectedMedia(media[prevIndex]);
+                }}
+                aria-label="Previous"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
+                  const nextIndex = currentIndex < media.length - 1 ? currentIndex + 1 : 0;
+                  setSelectedMedia(media[nextIndex]);
+                }}
+                aria-label="Next"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+      )}
 
       <Footer />
     </>
