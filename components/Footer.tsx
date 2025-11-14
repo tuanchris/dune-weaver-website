@@ -4,25 +4,25 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8">
+    <footer className="bg-theme-background-dark text-theme-text-tertiary py-8">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
-            <p className="font-bold text-white text-lg mb-1">Dune Weaver</p>
+            <p className="font-bold text-theme-text-inverse text-lg mb-1">Dune Weaver</p>
             <p className="text-sm">Open-source kinetic sand art</p>
           </div>
 
           <div className="flex gap-6 text-sm">
-            <a href="/about" className="hover:text-white transition-colors">
+            <a href="/about" className="hover:text-theme-text-inverse transition-colors">
               About
             </a>
-            <a href="/#products" className="hover:text-white transition-colors">
+            <a href="/#products" className="hover:text-theme-text-inverse transition-colors">
               Products
             </a>
-            <a href="/#community" className="hover:text-white transition-colors">
+            <a href="/#community" className="hover:text-theme-text-inverse transition-colors">
               Community
             </a>
-            <a href="https://github.com/tuanchris/dune-weaver/" className="hover:text-white transition-colors">
+            <a href="https://github.com/tuanchris/dune-weaver/" className="hover:text-theme-text-inverse transition-colors">
               GitHub
             </a>
           </div>

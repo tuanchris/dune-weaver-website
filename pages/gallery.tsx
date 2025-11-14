@@ -68,13 +68,13 @@ export default function Gallery() {
 
       <Header />
 
-      <main className="min-h-screen pt-16 bg-gray-50">
+      <main className="min-h-screen pt-16 bg-theme-background-secondary">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-theme-accent-900 mb-4">
               Gallery
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
               Explore stunning sand art patterns created by our community. Choose a table type to see what it can create.
             </p>
           </div>
@@ -84,25 +84,25 @@ export default function Gallery() {
               <Link
                 key={table.id}
                 href={`/gallery/${table.id}`}
-                className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group bg-theme-background-primary rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <h2 className="text-2xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors">
+                    <h2 className="text-2xl font-bold text-theme-text-primary group-hover:text-theme-accent-700 transition-colors">
                       {table.name}
                     </h2>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         table.badge.type === 'patreon'
-                          ? 'bg-purple-100 text-purple-700'
-                          : 'bg-green-100 text-green-700'
+                          ? 'bg-theme-badge-patreon-bg text-theme-badge-patreon-text'
+                          : 'bg-theme-badge-makerworld-bg text-theme-badge-makerworld-text'
                       }`}
                     >
                       {table.badge.text}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-4">{table.description}</p>
-                  <div className="flex items-center text-amber-600 font-semibold group-hover:translate-x-2 transition-transform">
+                  <p className="text-theme-text-secondary mb-4">{table.description}</p>
+                  <div className="flex items-center text-theme-accent-600 font-semibold group-hover:translate-x-2 transition-transform">
                     View Gallery
                     <svg
                       className="w-5 h-5 ml-2"
@@ -119,7 +119,7 @@ export default function Gallery() {
                     </svg>
                   </div>
                 </div>
-                <div className="h-48 relative bg-gray-100">
+                <div className="h-48 relative bg-theme-border-light">
                   <Image
                     src={table.image}
                     alt={table.name}

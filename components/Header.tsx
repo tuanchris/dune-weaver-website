@@ -13,12 +13,12 @@ export const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-theme-background-primary/95 backdrop-blur-sm shadow-sm">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-amber-900">Dune Weaver</span>
+            <span className="text-2xl font-bold text-theme-accent-900">Dune Weaver</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -30,7 +30,7 @@ export const Header = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-theme-text-secondary hover:text-theme-accent-900 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </a>
@@ -38,7 +38,7 @@ export const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-amber-900 transition-colors duration-200 font-medium"
+                  className="text-theme-text-secondary hover:text-theme-accent-900 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>
@@ -49,7 +49,7 @@ export const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-amber-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-900"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-theme-text-secondary hover:text-theme-accent-900 hover:bg-theme-background-secondary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-theme-accent-900"
             aria-expanded="false"
           >
             <span className="sr-only">Open main menu</span>

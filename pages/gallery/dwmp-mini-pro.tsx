@@ -135,13 +135,13 @@ export default function DWMPMiniProGallery({ media }: Props) {
 
       <Header />
 
-      <main className="min-h-screen pt-16 bg-gray-50">
+      <main className="min-h-screen pt-16 bg-theme-background-secondary">
         <div className="container mx-auto px-4 py-16">
           {/* Breadcrumb */}
           <div className="mb-8">
             <Link
               href="/gallery"
-              className="text-amber-600 hover:text-amber-700 flex items-center"
+              className="text-theme-accent-600 hover:text-theme-accent-700 flex items-center"
             >
               <svg
                 className="w-5 h-5 mr-2"
@@ -163,14 +163,14 @@ export default function DWMPMiniProGallery({ media }: Props) {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-amber-900">
+              <h1 className="text-4xl md:text-5xl font-bold text-theme-accent-900">
                 DWMP – Mini Pro
               </h1>
-              <span className="px-3 py-1 rounded-full text-sm font-semibold bg-purple-100 text-purple-700">
+              <span className="px-3 py-1 rounded-full text-sm font-semibold bg-theme-badge-patreon-bg text-theme-badge-patreon-text">
                 💎 Patreon
               </span>
             </div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
               A compact powerhouse combining portability with professional features.
               Explore beautiful patterns created by the community.
             </p>
@@ -182,7 +182,7 @@ export default function DWMPMiniProGallery({ media }: Props) {
               {media.map((item) => (
                 <div
                   key={item.filename}
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer break-inside-avoid mb-6"
+                  className="group relative bg-theme-background-primary rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer break-inside-avoid mb-6"
                   onClick={() => setSelectedMedia(item)}
                 >
                   {item.type === 'video' ? (
@@ -215,7 +215,7 @@ export default function DWMPMiniProGallery({ media }: Props) {
             <div className="text-center py-16">
               <div className="max-w-md mx-auto">
                 <svg
-                  className="w-24 h-24 mx-auto text-gray-300 mb-4"
+                  className="w-24 h-24 mx-auto text-theme-border-medium mb-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -227,9 +227,9 @@ export default function DWMPMiniProGallery({ media }: Props) {
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <p className="text-xl text-gray-500 mb-2">No images yet</p>
-                <p className="text-gray-400">
-                  Add images to <code className="px-2 py-1 bg-gray-100 rounded text-sm">public/gallery/dwmp-mini-pro/</code> and rebuild
+                <p className="text-xl text-theme-text-tertiary mb-2">No images yet</p>
+                <p className="text-theme-text-muted">
+                  Add images to <code className="px-2 py-1 bg-theme-border-light rounded text-sm">public/gallery/dwmp-mini-pro/</code> and rebuild
                 </p>
               </div>
             </div>
@@ -237,17 +237,17 @@ export default function DWMPMiniProGallery({ media }: Props) {
 
           {/* Call to Action */}
           <div className="mt-16 text-center">
-            <div className="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-theme-background-primary rounded-lg shadow-md p-8 max-w-2xl mx-auto">
+              <h2 className="text-2xl font-bold text-theme-text-primary mb-4">
                 Share Your Creations
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-theme-text-secondary mb-6">
                 Have you created amazing patterns with your DWMP Mini Pro? Share them with
                 the community and get featured in our gallery!
               </p>
               <a
                 href="https://discord.gg/mkbXyP6pw8"
-                className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
+                className="inline-flex items-center px-6 py-3 bg-theme-accent-600 text-theme-background-primary rounded-lg hover:bg-theme-accent-700 transition-colors font-semibold"
               >
                 Submit Your Photos
                 <svg
@@ -272,11 +272,11 @@ export default function DWMPMiniProGallery({ media }: Props) {
       {/* Lightbox Modal */}
       {selectedMedia && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-theme-background-overlay bg-opacity-90 flex items-center justify-center p-4"
           onClick={() => setSelectedMedia(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 text-theme-background-primary hover:text-theme-border-medium transition-colors"
             onClick={() => setSelectedMedia(null)}
             aria-label="Close"
           >
@@ -320,7 +320,7 @@ export default function DWMPMiniProGallery({ media }: Props) {
                 />
               </div>
             )}
-            <div className="text-white text-center mt-4 text-lg">
+            <div className="text-theme-background-primary text-center mt-4 text-lg">
               {selectedMedia.alt}
             </div>
           </div>
@@ -329,7 +329,7 @@ export default function DWMPMiniProGallery({ media }: Props) {
           {media.length > 1 && (
             <>
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-theme-background-primary hover:text-theme-border-medium transition-colors bg-theme-background-overlay bg-opacity-50 rounded-full p-3"
                 onClick={(e) => {
                   e.stopPropagation();
                   const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);
@@ -354,7 +354,7 @@ export default function DWMPMiniProGallery({ media }: Props) {
               </button>
 
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black bg-opacity-50 rounded-full p-3"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-theme-background-primary hover:text-theme-border-medium transition-colors bg-theme-background-overlay bg-opacity-50 rounded-full p-3"
                 onClick={(e) => {
                   e.stopPropagation();
                   const currentIndex = media.findIndex(m => m.filename === selectedMedia.filename);

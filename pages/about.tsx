@@ -16,18 +16,18 @@ export default function About() {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-theme-accent-900 mb-4">
               About Dune Weaver
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-theme-text-secondary">
               Creating mesmerizing art through technology and sand
             </p>
           </div>
 
           {/* What is Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">What is Dune Weaver?</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">What is Dune Weaver?</h2>
+            <div className="prose prose-lg max-w-none text-theme-text-secondary space-y-4">
               <p>
                 Dune Weaver is a web-controlled kinetic sand table that creates mesmerizing patterns
                 in sand using a steel ball guided by magnets beneath the surface. It's a motorized
@@ -46,15 +46,15 @@ export default function About() {
 
           {/* Design Philosophy */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Design Philosophy</h2>
-            <div className="space-y-6 text-gray-700">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">Design Philosophy</h2>
+            <div className="space-y-6 text-theme-text-secondary">
               <p className="text-lg leading-relaxed">
                 I wanted this version to nail a few key things:
               </p>
 
               <div className="space-y-4">
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Printability First
                   </h3>
                   <p>
@@ -63,8 +63,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Use What's Already Out There
                   </h3>
                   <p>
@@ -73,8 +73,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Pass the Living Room Test
                   </h3>
                   <p>
@@ -82,8 +82,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Keep the Cost Reasonable
                   </h3>
                   <p>
@@ -93,8 +93,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Silence is Golden
                   </h3>
                   <p>
@@ -103,8 +103,8 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-amber-600 pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="border-l-4 border-theme-border-accent pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-theme-text-primary mb-2">
                     Build on What Worked
                   </h3>
                   <p>
@@ -117,9 +117,9 @@ export default function About() {
           </section>
 
           {/* The Experience */}
-          <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Experience</h2>
-            <div className="text-gray-700 space-y-4">
+          <section className="mb-16 bg-gradient-to-br from-theme-accent-50 to-theme-accent-100 p-8 rounded-xl">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">The Experience</h2>
+            <div className="text-theme-text-secondary space-y-4">
               <p className="text-lg">
                 This isn't just a print-and-forget project. It becomes a presence in your space.
                 People stop by your desk at work asking about it. Kids are transfixed. You'll
@@ -131,16 +131,16 @@ export default function About() {
 
           {/* Why Build Instead of Buying */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Build Instead of Buying?</h2>
-            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
-              <div className="text-gray-700 space-y-4">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">Why Build Instead of Buying?</h2>
+            <div className="bg-theme-background-primary border-2 border-theme-accent-200 rounded-lg p-8">
+              <div className="text-theme-text-secondary space-y-4">
                 <p className="text-lg">
                   When you build the Dune Weaver, you get the satisfaction of creating something
                   with your own hands. You understand exactly how it works (so you can fix or
                   modify anything), and you're building on an open platform that you truly own.
                 </p>
                 <p>
-                  <strong className="text-amber-900">No cloud dependencies. No subscription fees.
+                  <strong className="text-theme-accent-900">No cloud dependencies. No subscription fees.
                   No planned obsolescence.</strong>
                 </p>
                 <p>
@@ -152,11 +152,11 @@ export default function About() {
           </section>
 
           {/* About the Creator */}
-          <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Meet the Creator</h2>
-            <div className="space-y-4 text-gray-700">
+          <section className="mb-16 bg-gradient-to-br from-theme-accent-50 to-theme-accent-100 p-8 rounded-xl">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">Meet the Creator</h2>
+            <div className="space-y-4 text-theme-text-secondary">
               <p className="text-lg">
-                <span className="font-semibold text-amber-900">Tuan Nguyen</span> is a data
+                <span className="font-semibold text-theme-accent-900">Tuan Nguyen</span> is a data
                 professional with a passion for STEM and making. As the creator of Dune Weaver,
                 Tuan has combined his technical expertise with creative vision to bring this
                 mesmerizing kinetic art project to the maker community.
@@ -173,18 +173,18 @@ export default function About() {
                 for makers worldwide to create their own mesmerizing sand art installations
                 at a fraction of the cost of commercial alternatives.
               </p>
-              <div className="mt-6 pt-6 border-t border-amber-200">
-                <p className="text-sm text-gray-600">
+              <div className="mt-6 pt-6 border-t border-theme-accent-200">
+                <p className="text-sm text-theme-text-secondary">
                   Connect with Tuan and the Dune Weaver community on{' '}
-                  <a href="https://github.com/tuanchris" className="text-amber-700 hover:text-amber-900 underline">
+                  <a href="https://github.com/tuanchris" className="text-theme-accent-700 hover:text-theme-accent-900 underline">
                     GitHub
                   </a>
                   ,{' '}
-                  <a href="https://makerworld.com/en/@tuanchris" className="text-amber-700 hover:text-amber-900 underline">
+                  <a href="https://makerworld.com/en/@tuanchris" className="text-theme-accent-700 hover:text-theme-accent-900 underline">
                     MakerWorld
                   </a>
                   , and{' '}
-                  <a href="https://www.patreon.com/DuneWeaver" className="text-amber-700 hover:text-amber-900 underline">
+                  <a href="https://www.patreon.com/DuneWeaver" className="text-theme-accent-700 hover:text-theme-accent-900 underline">
                     Patreon
                   </a>
                   .
@@ -195,27 +195,27 @@ export default function About() {
 
           {/* Why Choose Dune Weaver */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Dune Weaver?</h2>
-            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
-              <ul className="space-y-4 text-gray-700">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">Why Choose Dune Weaver?</h2>
+            <div className="bg-theme-background-primary border-2 border-theme-accent-200 rounded-lg p-8">
+              <ul className="space-y-4 text-theme-text-secondary">
                 <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span className="text-theme-accent-600 mr-3 text-xl">✓</span>
                   <span><strong>Affordable:</strong> Build your own for a fraction of the cost of commercial alternatives</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span className="text-theme-accent-600 mr-3 text-xl">✓</span>
                   <span><strong>Open Source:</strong> Full access to designs, code, and community support</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span className="text-theme-accent-600 mr-3 text-xl">✓</span>
                   <span><strong>Customizable:</strong> Modify and personalize your build to suit your preferences</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span className="text-theme-accent-600 mr-3 text-xl">✓</span>
                   <span><strong>Educational:</strong> Learn about electronics, programming, and mechanical design</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
+                  <span className="text-theme-accent-600 mr-3 text-xl">✓</span>
                   <span><strong>Community Driven:</strong> Active Discord community for support and inspiration</span>
                 </li>
               </ul>
@@ -224,23 +224,23 @@ export default function About() {
 
           {/* Call to Action */}
           <section className="text-center">
-            <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-xl">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-gradient-to-r from-theme-accent-100 to-theme-accent-200 p-8 rounded-xl">
+              <h2 className="text-2xl font-bold text-theme-text-primary mb-4">
                 Ready to Build Your Own?
               </h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-theme-text-secondary mb-6">
                 Explore the different versions and find the perfect Dune Weaver for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/#products"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-amber-700 text-white font-semibold rounded-lg hover:bg-amber-800 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-theme-accent-700 text-theme-text-inverse font-semibold rounded-lg hover:bg-theme-accent-800 transition-colors"
                 >
                   View Products
                 </a>
                 <a
                   href="/#community"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-amber-700 font-semibold rounded-lg border-2 border-amber-700 hover:bg-amber-50 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-theme-background-primary text-theme-accent-700 font-semibold rounded-lg border-2 border-theme-accent-700 hover:bg-theme-accent-50 transition-colors"
                 >
                   Join Community
                 </a>
