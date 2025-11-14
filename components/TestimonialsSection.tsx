@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Section } from './Section';
 
 interface Testimonial {
@@ -56,7 +56,9 @@ const testimonials: Testimonial[] = [
 
 export const TestimonialsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollToIndex = (index: number) => {
     if (scrollContainerRef.current) {
@@ -73,11 +75,13 @@ export const TestimonialsSection: React.FC = () => {
   const handlePrevious = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : testimonials.length - 1;
     scrollToIndex(newIndex);
+    setIsAutoPlaying(false);
   };
 
   const handleNext = () => {
     const newIndex = currentIndex < testimonials.length - 1 ? currentIndex + 1 : 0;
     scrollToIndex(newIndex);
+    setIsAutoPlaying(false);
   };
 
   const handleScroll = () => {
@@ -88,6 +92,49 @@ export const TestimonialsSection: React.FC = () => {
       setCurrentIndex(newIndex);
     }
   };
+
+  const handleIndicatorClick = (index: number) => {
+    scrollToIndex(index);
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
+  };
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isAutoPlaying) {
+      autoPlayIntervalRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => {
+          const newIndex = prevIndex < testimonials.length - 1 ? prevIndex + 1 : 0;
+          scrollToIndex(newIndex);
+          return newIndex;
+        });
+      }, 5000); // Change testimonial every 5 seconds
+    }
+
+    return () => {
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+      }
+    };
+  }, [isAutoPlaying]);
+
+  // Resume auto-play after 10 seconds of inactivity
+  useEffect(() => {
+    if (!isAutoPlaying) {
+      const resumeTimeout = setTimeout(() => {
+        setIsAutoPlaying(true);
+      }, 10000);
+
+      return () => clearTimeout(resumeTimeout);
+    }
+  }, [isAutoPlaying, currentIndex]);
 
   return (
     <Section id="testimonials" background="sand">
@@ -100,7 +147,11 @@ export const TestimonialsSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative max-w-6xl mx-auto">
+      <div
+        className="relative max-w-6xl mx-auto"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* Navigation Buttons */}
         <button
           onClick={handlePrevious}
@@ -180,7 +231,7 @@ export const TestimonialsSection: React.FC = () => {
           {testimonials.map((_, index) => (
             <button
               key={index}
-              onClick={() => scrollToIndex(index)}
+              onClick={() => handleIndicatorClick(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? 'bg-blue-500 w-8'
