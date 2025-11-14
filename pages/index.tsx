@@ -17,7 +17,7 @@ export default function Home() {
 
       <Header />
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-sand-900">
         <HeroSection />
         <AboutSection />
         <ProductsSection />

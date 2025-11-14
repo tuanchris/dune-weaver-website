@@ -12,7 +12,7 @@ export default function About() {
 
       <Header />
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-sand-900">
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
