@@ -15,17 +15,8 @@ interface TableType {
 
 const tableTypes: TableType[] = [
   {
-    id: 'dwmp-mini-pro',
-    name: 'DWMP – Mini Pro',
-    description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
-    badge: {
-      text: '💎 Patreon',
-      type: 'patreon',
-    },
-  },
-  {
     id: 'dwp-pro',
-    name: 'DWP – Dune Weaver Pro',
+    name: 'Dune Weaver Pro',
     description: 'The ultimate kinetic sand table. Full-sized with professional-grade components, advanced controls, and the largest drawing surface for spectacular patterns.',
     badge: {
       text: '💎 Patreon',
@@ -33,8 +24,17 @@ const tableTypes: TableType[] = [
     },
   },
   {
+    id: 'dwmp-mini-pro',
+    name: 'Dune Weaver Mini Pro',
+    description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
+    badge: {
+      text: '💎 Patreon',
+      type: 'patreon',
+    },
+  },
+  {
     id: 'dw-mini',
-    name: 'DW Mini',
+    name: 'Dune Weaver Mini',
     description: 'A free, beginner-friendly desktop sand table. Great for learning and experimentation. Print it yourself and start creating beautiful patterns today.',
     badge: {
       text: 'MakerWorld',
@@ -43,7 +43,7 @@ const tableTypes: TableType[] = [
   },
   {
     id: 'og-dw',
-    name: 'OG DW – Original',
+    name: 'Dune Weaver OG',
     description: 'The original open-source Dune Weaver design. A proven build with a passionate community and extensive documentation. Perfect for tinkerers.',
     badge: {
       text: 'MakerWorld',
