@@ -6,7 +6,7 @@ export const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/', external: false },
-    { name: 'Shop', href: 'https://www.patreon.com/c/duneweaver/shop', external: true },
+    { name: 'Products', href: '/#products', external: false },
     { name: 'Docs', href: '/docs', external: false },
     { name: 'Gallery', href: '/gallery', external: false },
     { name: 'About', href: '/about', external: false },
