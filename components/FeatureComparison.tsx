@@ -148,22 +148,27 @@ export const FeatureComparison: React.FC = () => {
       {/* Mobile & Tablet View - Cards */}
       <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
-          { name: 'Dune Weaver Pro', key: 'pro' as const, badge: '💎 Patreon', badgeColor: 'bg-orange-500' },
-          { name: 'Dune Weaver Mini Pro', key: 'miniPro' as const, badge: '💎 Patreon', badgeColor: 'bg-orange-500' },
-          { name: 'Dune Weaver OG', key: 'og' as const, badge: 'MakerWorld', badgeColor: 'bg-blue-500' },
-          { name: 'Dune Weaver Mini', key: 'mini' as const, badge: 'MakerWorld', badgeColor: 'bg-blue-500' },
+          { name: 'Dune Weaver Pro', key: 'pro' as const, badge: '💎 Patreon', badgeColor: 'bg-badge-patreon-bg text-badge-patreon-text' },
+          { name: 'Dune Weaver Mini Pro', key: 'miniPro' as const, badge: '💎 Patreon', badgeColor: 'bg-badge-patreon-bg text-badge-patreon-text' },
+          { name: 'Dune Weaver OG', key: 'og' as const, badge: 'MakerWorld', badgeColor: 'bg-badge-makerworld-bg text-badge-makerworld-text' },
+          { name: 'Dune Weaver Mini', key: 'mini' as const, badge: 'MakerWorld', badgeColor: 'bg-badge-makerworld-bg text-badge-makerworld-text' },
         ].map((product) => (
-          <div key={product.key} className="bg-white rounded-xl shadow-lg p-6 border border-theme-border-light">
-            <div className="mb-4">
+          <div key={product.key} className="bg-theme-surface rounded-xl shadow-lg overflow-hidden border border-theme-border-light">
+            <div className="bg-theme-surface p-6 border-b border-theme-border-light">
               <h3 className="text-xl font-bold text-theme-text-primary mb-2">{product.name}</h3>
-              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-white ${product.badgeColor}`}>
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${product.badgeColor}`}>
                 {product.badge}
               </span>
             </div>
-            <div className="space-y-3">
+            <div>
               {features.map((feature, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border border-theme-border-light">
-                  <span className="text-sm font-semibold text-theme-text-secondary">{feature.name}</span>
+                <div
+                  key={index}
+                  className={`flex justify-between items-center px-6 py-4 ${
+                    index % 2 === 0 ? 'bg-sand-800' : 'bg-sand-900'
+                  } border-b border-theme-border-light last:border-b-0`}
+                >
+                  <span className="text-sm font-semibold text-theme-text-primary">{feature.name}</span>
                   <div className="text-right">
                     {renderCell(feature[product.key])}
                   </div>
