@@ -38,7 +38,7 @@ const communityLinks: CommunityLink[] = [
 
 export const CommunitySection: React.FC = () => {
   return (
-    <Section id="community" background="white">
+    <Section id="community" background="sand">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Join the Community

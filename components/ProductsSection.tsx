@@ -52,7 +52,7 @@ const products: Product[] = [
 
 export const ProductsSection: React.FC = () => {
   return (
-    <Section id="products" background="gray">
+    <Section id="products" background="white">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Choose Your Dune Weaver

@@ -29,7 +29,7 @@ const addons: Product[] = [
 
 export const AddonsSection: React.FC = () => {
   return (
-    <Section id="addons" background="white">
+    <Section id="addons" background="sand">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Enhance Your Experience

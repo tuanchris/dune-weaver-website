@@ -151,7 +151,7 @@ export const TestimonialsSection: React.FC = () => {
   }, [isAutoPlaying, currentIndex]);
 
   return (
-    <Section id="testimonials" background="sand">
+    <Section id="testimonials" background="white">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           What Makers Are Saying
