@@ -1,11 +1,12 @@
 import React from 'react';
 import { Section } from './Section';
 import { ProductCard, Product } from './ProductCard';
+import { getAssetPath } from '@/lib/assetPath';
 
 const addons: Product[] = [
   {
     name: 'Customize Your Dune Weaver Pro',
-    image: '/images/customize-addon.jpg',
+    image: getAssetPath('/images/customize-addon.jpg'),
     description: 'Personalize the enclosure of your Dune Weaver Pro. No re-print needed.',
     badge: {
       text: '💎 Patreon',
@@ -16,8 +17,8 @@ const addons: Product[] = [
   },
   {
     name: 'Desert Compass',
-    image: '/images/desert-compass.jpg',
-    description: 'Keep pattern orientation automatically. Desert Compass gives your table a repeatable, absolute “zero” angle using a simple reed switch/hall effect sensors + magnets',
+    image: getAssetPath('/images/desert-compass.jpg'),
+    description: 'Keep pattern orientation automatically. Desert Compass gives your table a repeatable, absolute "zero" angle using a simple reed switch/hall effect sensors + magnets',
     badge: {
       text: '💎 Patreon',
       type: 'patreon',

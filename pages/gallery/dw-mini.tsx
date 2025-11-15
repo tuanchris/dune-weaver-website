@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import sizeOf from 'image-size';
 import { GalleryPageTemplate, GalleryPageConfig } from '@/components/GalleryPageTemplate';
+import { getAssetPath } from '@/lib/assetPath';
 
 interface GalleryMedia {
   filename: string;
@@ -52,7 +53,7 @@ export async function getStaticProps() {
       const baseMedia = {
         filename,
         alt,
-        src: `/gallery/dw-mini/${filename}`,
+        src: getAssetPath(`/gallery/dw-mini/${filename}`),
         type,
       };
 

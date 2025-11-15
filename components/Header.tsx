@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { getAssetPath } from '@/lib/assetPath';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,11 +22,11 @@ export const Header = () => {
             <div
               className="w-12 h-12 my-2 bg-theme-text-brand flex-shrink-0"
               style={{
-                maskImage: 'url(/images/logo.svg)',
+                maskImage: `url(${getAssetPath('/images/logo.svg')})`,
                 maskSize: 'contain',
                 maskRepeat: 'no-repeat',
                 maskPosition: 'center',
-                WebkitMaskImage: 'url(/images/logo.svg)',
+                WebkitMaskImage: `url(${getAssetPath('/images/logo.svg')})`,
                 WebkitMaskSize: 'contain',
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskPosition: 'center',

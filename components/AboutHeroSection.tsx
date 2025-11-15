@@ -1,8 +1,9 @@
 import React from 'react';
+import { getAssetPath } from '@/lib/assetPath';
 
 // Configuration for hero video - easily configurable
 // You can change this to any video path in /public/videos/
-const ABOUT_HERO_VIDEO = '/videos/about/video1.MOV';
+const ABOUT_HERO_VIDEO = getAssetPath('/videos/about/video1.MOV');
 
 export const AboutHeroSection: React.FC = () => {
   return (

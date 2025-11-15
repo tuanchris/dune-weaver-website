@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './Button';
 import { Section } from './Section';
+import { getAssetPath } from '@/lib/assetPath';
 
 // Configuration for hero videos
 const HERO_VIDEOS = [
-  '/videos/hero/video1.mp4',
-  '/videos/hero/video2.mp4',
-  '/videos/hero/video3.mov',
-  '/videos/hero/video4.mp4',
-  '/videos/hero/video5.mp4',
+  getAssetPath('/videos/hero/video1.mp4'),
+  getAssetPath('/videos/hero/video2.mp4'),
+  getAssetPath('/videos/hero/video3.mov'),
+  getAssetPath('/videos/hero/video4.mp4'),
+  getAssetPath('/videos/hero/video5.mp4'),
 ];
 
-const INITIAL_IMAGE = '/images/hero-dune-weaver.jpeg';
+const INITIAL_IMAGE = getAssetPath('/images/hero-dune-weaver.jpeg');
 const VIDEO_TRANSITION_DURATION = 1000; // 1 second crossfade
 
 export const HeroSection: React.FC = () => {

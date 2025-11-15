@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { getAssetPath } from '@/lib/assetPath';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -135,11 +136,11 @@ export const Footer: React.FC = () => {
                 <div
                   className="w-8 h-8 bg-theme-text-inverse flex-shrink-0"
                   style={{
-                    maskImage: 'url(/images/logo.svg)',
+                    maskImage: `url(${getAssetPath('/images/logo.svg')})`,
                     maskSize: 'contain',
                     maskRepeat: 'no-repeat',
                     maskPosition: 'center',
-                    WebkitMaskImage: 'url(/images/logo.svg)',
+                    WebkitMaskImage: `url(${getAssetPath('/images/logo.svg')})`,
                     WebkitMaskSize: 'contain',
                     WebkitMaskRepeat: 'no-repeat',
                     WebkitMaskPosition: 'center',

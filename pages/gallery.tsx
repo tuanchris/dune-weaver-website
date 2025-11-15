@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { getAssetPath } from '@/lib/assetPath';
 
 interface TableType {
   id: string;
@@ -20,7 +21,7 @@ const tableTypes: TableType[] = [
     id: 'dwp-pro',
     name: 'Dune Weaver Pro',
     description: 'The ultimate kinetic sand table. Full-sized with professional-grade components, advanced controls, and the largest drawing surface for spectacular patterns.',
-    image: '/images/dune-weaver-pro.jpg',
+    image: getAssetPath('/images/dune-weaver-pro.jpg'),
     badge: {
       text: '💎 Patreon',
       type: 'patreon',
@@ -30,7 +31,7 @@ const tableTypes: TableType[] = [
     id: 'dwmp-mini-pro',
     name: 'Dune Weaver Mini Pro',
     description: 'A compact powerhouse combining portability with professional features. Perfect for your desk with premium build quality and advanced pattern capabilities.',
-    image: '/images/dune-weaver-mini-pro.jpg',
+    image: getAssetPath('/images/dune-weaver-mini-pro.jpg'),
     badge: {
       text: '💎 Patreon',
       type: 'patreon',
@@ -40,7 +41,7 @@ const tableTypes: TableType[] = [
     id: 'dw-mini',
     name: 'Dune Weaver Mini',
     description: 'A free, beginner-friendly desktop sand table. Great for learning and experimentation. Print it yourself and start creating beautiful patterns today.',
-    image: '/images/dune-weaver-mini.jpg',
+    image: getAssetPath('/images/dune-weaver-mini.jpg'),
     badge: {
       text: 'MakerWorld',
       type: 'makerworld',
@@ -50,7 +51,7 @@ const tableTypes: TableType[] = [
     id: 'og-dw',
     name: 'Dune Weaver OG',
     description: 'The original open-source Dune Weaver design. A proven build with a passionate community and extensive documentation. Perfect for tinkerers.',
-    image: '/images/dune-weaver-og.jpg',
+    image: getAssetPath('/images/dune-weaver-og.jpg'),
     badge: {
       text: 'MakerWorld',
       type: 'makerworld',
