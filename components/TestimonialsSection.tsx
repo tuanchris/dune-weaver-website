@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
   {
     name: 'RealGoose',
     role: 'Maker',
-    content: 'Sharing an update on this DW Mini. Started running 3/20/25 and has been running 24/7 on my desk at work. That's 3,864 hours and counting!',
+    content: 'Sharing an update on this DW Mini. Started running 3/20/25 and has been running 24/7 on my desk at work. That\'s 3,864 hours and counting!',
     initials: 'RG',
     avatarColor: 'bg-avatar-blue',
   },
