@@ -20,7 +20,7 @@ export default function About() {
         {/* What is Dune Weaver */}
         <Section background="white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">
               What is Dune Weaver?
             </h2>
             <div className="prose prose-lg max-w-none text-theme-text-secondary space-y-4">
@@ -47,13 +47,13 @@ export default function About() {
         {/* About the Creator */}
         <Section background="sand">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">
               Meet the Creator
             </h2>
-            <div className="space-y-4 text-gray-700">
+            <div className="space-y-4 text-theme-text-primary">
               <p className="text-lg">
                 Hi, I'm{" "}
-                <span className="font-semibold text-amber-900">Tuan</span>—data
+                <span className="font-semibold text-theme-text-secondary">Tuan</span>—data
                 geek by trade, maker at heart. I started Dune Weaver because I
                 wanted a kinetic sand table that anyone could actually build:
                 printable parts, off-the-shelf hardware, no mystery boxes.
@@ -92,10 +92,10 @@ export default function About() {
         {/* Why Choose Dune Weaver */}
         <Section background="white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">
               Why Choose Dune Weaver?
             </h2>
-            <ul className="space-y-4 text-gray-700">
+            <ul className="space-y-4 text-theme-text-secondary">
               <li className="flex items-start">
                 <span className="text-amber-600 mr-3 text-xl">✓</span>
                 <span>
@@ -138,7 +138,7 @@ export default function About() {
         {/* Design Philosophy */}
         <Section background="sand">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-6">
               Design Philosophy
             </h2>
             <div className="space-y-6 text-theme-text-secondary">
@@ -219,10 +219,10 @@ export default function About() {
         {/* Call to Action */}
         <Section background="white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-theme-text-primary mb-4">
               Ready to Build Your Own?
             </h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-theme-text-secondary mb-6">
               Explore the different versions and find the perfect Dune Weaver
               for you.
             </p>

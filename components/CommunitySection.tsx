@@ -52,12 +52,12 @@ export const CommunitySection: React.FC = () => {
         {communityLinks.map((link, index) => (
           <div
             key={index}
-            className="bg-theme-background-sand rounded-xl p-6 text-center border border-theme-border-sand hover:shadow-lg transition-shadow duration-200"
+            className="bg-theme-surface rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-200"
           >
             <div className="text-4xl mb-3">{link.icon}</div>
             <h3 className="text-xl font-bold text-theme-text-primary mb-2">{link.name}</h3>
             <p className="text-theme-text-secondary mb-4 text-sm">{link.description}</p>
-            <Button href={link.link} variant="outline" className="w-full">
+            <Button href={link.link} variant="outline" className="w-full bg-theme-primary text-theme-text-inverse hover:bg-theme-primary-hover">
               Visit {link.name}
             </Button>
           </div>

@@ -55,7 +55,7 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
       <div className="min-h-screen bg-theme-background-alt">
         {/* Header */}
         <Section background="white">
-        <div className="text-center py-8">
+        <div className="text-center py-16">
           <h1 className="text-5xl md:text-6xl font-bold text-theme-text-primary mb-4">
             Documentation
           </h1>
@@ -131,7 +131,7 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
                     Follow our step-by-step guides to build your Dune Weaver table from start to finish
                   </p>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   {buildPaths.map((buildPath) => (
                     <BuildPath key={buildPath.id} buildPath={buildPath} />
                   ))}
@@ -152,7 +152,7 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
             </div>
           </Section>
 
-          {/* Documents by Table Type */}
+          {/* Documents by Table Type
           <Section background="gray">
             <div className="py-12">
               <h2 className="text-3xl font-bold text-theme-text-primary mb-8">Browse by Table Type</h2>
@@ -175,6 +175,7 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
               ))}
             </div>
           </Section>
+          */}
         </>
       )}
       </div>

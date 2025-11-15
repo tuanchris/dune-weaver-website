@@ -30,45 +30,46 @@ module.exports = {
           'primary-hover': '#8a6a50',     // sand-700
 
           // Secondary brand colors (amber-based)
-          'secondary': '#d97706',         // amber-600
+          'secondary': '#b87333',         // amber-600
           'secondary-light': '#f59e0b',   // amber-500
-          'secondary-dark': '#b45309',    // amber-700
+          'secondary-dark': '#d0beb4',    // amber-700
           'secondary-hover': '#b45309',   // amber-700
 
           // Backgrounds
-          'background': '#ffffff',        // white
-          'background-alt': '#f9fafb',    // gray-50
-          'background-sand': '#fdfaf6',   // sand-50
-          'surface': '#ffffff',           // white
-          'surface-hover': '#f3f4f6',     // gray-100
+          'background': '#2b150a',        // white
+          'background-alt': '#2b150a',    // gray-50
+          'background-sand': '#2b150af8',   // sand-50
+          'surface': '#553522',           // white
+          'surface-alt': '#947058',
+          'surface-hover': '#a88a77',     // gray-100
 
           // Text colors
-          'text-primary': '#111827',      // gray-900
-          'text-secondary': '#4b5563',    // gray-600
-          'text-tertiary': '#6b7280',     // gray-500
+          'text-primary': '#d0beb4',      // gray-900
+          'text-secondary': '#bca496',    // gray-600
+          'text-tertiary': '#947058',     // gray-500
           'text-muted': '#9ca3af',        // gray-400
           'text-inverse': '#ffffff',      // white
-          'text-brand': '#78350f',        // amber-900
+          'text-brand': '#d0beb4',        // amber-900
 
           // Borders
-          'border': '#e5e7eb',            // gray-200
-          'border-light': '#f3f4f6',      // gray-100
-          'border-strong': '#d1d5db',     // gray-300
+          'border': '#947058',            // gray-200
+          'border-light': '#553522',      // gray-100
+          'border-strong': '#947058',     // gray-300
           'border-sand': '#ede1d0',       // sand-200
-          'border-sand-strong': '#b8906a', // sand-500
+          'border-sand-strong': '#402516', // sand-500
           'border-accent': '#fde68a',     // amber-200
 
           // Interactive states
-          'focus': '#3b82f6',             // blue-500
-          'focus-ring': '#3b82f6',        // blue-500
+          'focus': '#bca496',             // blue-500
+          'focus-ring': '#bca496',        // blue-500
 
           // Overlay
           'overlay': 'rgba(0, 0, 0, 0.2)',
-          'overlay-light': 'rgba(255, 255, 255, 0.95)',
+          'overlay-light': '#2b150af8',
 
           // Footer
-          'footer-bg': '#111827',         // gray-900
-          'footer-text': '#d1d5db',       // gray-300
+          'footer-bg': '#2b150a',         // gray-900
+          'footer-text': '#ede0d4',       // gray-300
 
           // Gradient colors
           'gradient-start': '#fffbeb',    // amber-50
@@ -89,12 +90,12 @@ module.exports = {
 
         // Badge colors
         badge: {
-          'patreon-bg': '#f3e8ff',        // purple-100
-          'patreon-text': '#7e22ce',      // purple-700
-          'makerworld-bg': '#dcfce7',     // green-100
-          'makerworld-text': '#15803d',   // green-700
-          'orange-bg': '#f97316',         // orange-500
-          'blue-bg': '#3b82f6',           // blue-500
+          'patreon-bg': '#9c6644',        // purple-100
+          'patreon-text': '#f3f4f6',      // purple-700
+          'makerworld-bg': '#bb9457',     // green-100
+          'makerworld-text': '#f3f4f6',   // green-700
+          'orange-bg': '#9c6644',         // orange-500
+          'blue-bg': '#bb9457',           // blue-500
         },
       },
     },

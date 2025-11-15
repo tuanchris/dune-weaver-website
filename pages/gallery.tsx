@@ -71,7 +71,7 @@ export default function Gallery() {
       <main className="min-h-screen pt-16 bg-theme-background-alt">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-theme-text-brand mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-theme-text-primary mb-4">
               Gallery
             </h1>
             <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">

@@ -32,6 +32,7 @@ Connect remotely using: `ssh pi@raspberrypi.local`
 
 ### Installation
 Execute these commands to install Docker:
+
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh

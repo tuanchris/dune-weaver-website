@@ -46,7 +46,7 @@ export const FeaturesSection: React.FC = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-theme-surface rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+            className="bg-theme-surface rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-theme-border-light"
           >
             <div className="text-4xl mb-4">{feature.icon}</div>
             <h3 className="text-xl font-bold text-theme-text-primary mb-3">

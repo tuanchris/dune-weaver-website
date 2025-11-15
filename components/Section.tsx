@@ -22,7 +22,7 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <section
       id={id}
-      className={`py-16 md:py-24 ${backgroundStyles[background]} ${className}`}
+      className={`py-16 md:py-12 ${backgroundStyles[background]} ${className}`}
     >
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         {children}

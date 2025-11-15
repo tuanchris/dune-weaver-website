@@ -88,38 +88,38 @@ export const FeatureComparison: React.FC = () => {
         </div>
       );
     }
-    return <span className="text-gray-700 text-sm md:text-base">{value}</span>;
+    return <span className="text-theme-text-secondary text-sm md:text-base">{value}</span>;
   };
 
   return (
     <div className="mt-16 md:mt-24">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Feature Comparison
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
           Compare features across all Dune Weaver models to find the perfect fit.
         </p>
       </div>
 
       {/* Desktop View - Table */}
-      <div className="hidden lg:block overflow-x-auto rounded-xl border border-gray-200 shadow-lg">
-        <table className="w-full bg-white">
+      <div className="hidden lg:block overflow-x-auto rounded-xl border border-theme-border-light shadow-lg">
+        <table className="w-full bg-theme-surface">
           <thead>
-            <tr className="bg-gradient-to-r from-orange-50 to-orange-100 border-b-2 border-orange-200">
-              <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 uppercase tracking-wider">
+            <tr className="border border-theme-border-light">
+              <th className="px-6 py-4 text-left text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
                 Feature
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-gray-900 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
                 Pro
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-gray-900 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
                 Mini Pro
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-gray-900 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
                 OG
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-gray-900 uppercase tracking-wider">
+              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
                 Mini
               </th>
             </tr>
@@ -129,10 +129,10 @@ export const FeatureComparison: React.FC = () => {
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                } border-b border-gray-100 hover:bg-orange-50 transition-colors`}
+                  index % 2 === 0 ? 'bg-sand-800' : 'bg-sand-900'
+                } border border-theme-border-light transition-colors`}
               >
-                <td className="px-6 py-4 text-sm font-semibold text-gray-900">
+                <td className="px-6 py-4 text-sm font-semibold text-theme-text-primary">
                   {feature.name}
                 </td>
                 <td className="px-6 py-4 text-center">{renderCell(feature.pro)}</td>
@@ -153,17 +153,17 @@ export const FeatureComparison: React.FC = () => {
           { name: 'Dune Weaver OG', key: 'og' as const, badge: 'MakerWorld', badgeColor: 'bg-blue-500' },
           { name: 'Dune Weaver Mini', key: 'mini' as const, badge: 'MakerWorld', badgeColor: 'bg-blue-500' },
         ].map((product) => (
-          <div key={product.key} className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+          <div key={product.key} className="bg-white rounded-xl shadow-lg p-6 border border-theme-border-light">
             <div className="mb-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+              <h3 className="text-xl font-bold text-theme-text-primary mb-2">{product.name}</h3>
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-white ${product.badgeColor}`}>
                 {product.badge}
               </span>
             </div>
             <div className="space-y-3">
               {features.map((feature, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                  <span className="text-sm font-semibold text-gray-700">{feature.name}</span>
+                <div key={index} className="flex justify-between items-center py-2 border border-theme-border-light">
+                  <span className="text-sm font-semibold text-theme-text-secondary">{feature.name}</span>
                   <div className="text-right">
                     {renderCell(feature[product.key])}
                   </div>

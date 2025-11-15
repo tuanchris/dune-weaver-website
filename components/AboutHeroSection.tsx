@@ -30,7 +30,7 @@ export const AboutHeroSection: React.FC = () => {
               About Dune Weaver
             </h1>
             <p className="text-xl md:text-2xl text-white drop-shadow-lg">
-              Creating mesmerizing art through technology and sand
+              Open-source kinetic sand tables
             </p>
           </div>
         </div>

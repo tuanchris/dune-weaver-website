@@ -2,8 +2,7 @@
   "buildPaths": [
     {
       "id": "dune-weaver-pro-complete",
-      "title": "Build Your Dune Weaver Pro",
-      "description": "Complete step-by-step guide to building your Dune Weaver Pro from start to finish",
+      "title": "Dune Weaver Pro",
       "tableType": "Dune Weaver Pro",
       "steps": [
         {
@@ -16,38 +15,37 @@
           "stepNumber": 2,
           "title": "Gather Materials",
           "documentSlug": "dwmp-bom",
-          "description": "Review the bill of materials and gather all necessary components"
+          "description": "Review the bill of materials and order all necessary components"
         },
         {
           "stepNumber": 3,
-          "title": "Assembly",
+          "title": "Assembly Guide",
           "documentSlug": "dw-pro-assembly",
           "description": "Assemble the mechanical components of your table"
         },
         {
           "stepNumber": 4,
-          "title": "Wiring",
-          "documentSlug": "wiring",
-          "description": "Connect all electronic components properly"
+          "title": "Configure Motor VREF",
+          "documentSlug": "setting-vref",
+          "description": "Set the VREF for optimal motor performance"
         },
         {
           "stepNumber": 5,
           "title": "Install Firmware",
           "documentSlug": "installing-firmware",
-          "description": "Flash the firmware to your controller board"
+          "description": "Flash the firmware to your controller board (DLC32)"
         },
         {
           "stepNumber": 6,
-          "title": "Configure Settings",
-          "documentSlug": "setting-vref",
-          "description": "Set the VREF for optimal motor performance"
+          "title": "Install Software",
+          "documentSlug": "deploying-backend",
+          "description": "Install Software on the Raspberry Pi and connect to the web interface"
         }
       ]
     },
     {
       "id": "dune-weaver-mini-pro-complete",
-      "title": "Build Your Dune Weaver Mini Pro",
-      "description": "Complete step-by-step guide to building your Dune Weaver Mini Pro from start to finish",
+      "title": "Dune Weaver Mini Pro",
       "tableType": "Dune Weaver Mini Pro",
       "steps": [
         {
@@ -70,15 +68,46 @@
         },
         {
           "stepNumber": 4,
-          "title": "Wiring",
-          "documentSlug": "wiring",
-          "description": "Connect all electronic components properly"
+          "title": "Configure Motor VREF",
+          "documentSlug": "setting-vref",
+          "description": "For Nema 17 version only. Set the VREF for optimal motor performance"
         },
         {
           "stepNumber": 5,
           "title": "Install Firmware",
           "documentSlug": "installing-firmware",
-          "description": "Flash the firmware to your controller board"
+          "description": "Flash the firmware to your controller board (DLC32)"
+        },
+        {
+          "stepNumber": 6,
+          "title": "Install Software",
+          "documentSlug": "deploying-backend",
+          "description": "Install Software on the Raspberry Pi and connect to the web interface"
+        }
+      ]
+    },
+    {
+      "id": "dw-mini-dw-og",
+      "title": "Dune Weaver Mini/OG",
+      "tableType": "Dune Weaver Mini/OG",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "title": "Getting started",
+          "documentSlug": "",
+          "description": "Follow the assembly instructions on Maker World. The BOM and assembly guide can be found there."
+        },
+        {
+          "stepNumber": 2,
+          "title": "Install Firmware",
+          "documentSlug": "installing-firmware",
+          "description": "Flash the firmware to your controller board (DLC32)"
+        },
+        {
+          "stepNumber": 3,
+          "title": "Install Software",
+          "documentSlug": "deploying-backend",
+          "description": "Install Software on the Raspberry Pi and connect to the web interface"
         }
       ]
     }

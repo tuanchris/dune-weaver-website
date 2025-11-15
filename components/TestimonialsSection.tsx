@@ -169,7 +169,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus border border-theme-focus-ring"
           aria-label="Previous testimonial"
         >
           <svg
@@ -189,7 +189,7 @@ export const TestimonialsSection: React.FC = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus border border-theme-focus-ring"
           aria-label="Next testimonial"
         >
           <svg
@@ -211,14 +211,14 @@ export const TestimonialsSection: React.FC = () => {
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] "
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-full md:w-[calc(33.333%-1.5rem)] snap-center"
             >
-              <div className="bg-theme-surface rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
+              <div className="bg-theme-surface rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 h-full border border-theme-border-light">
                 <div className="flex items-center mb-6">
                   <div
                     className={`w-12 h-12 ${testimonial.avatarColor} rounded-full flex items-center justify-center text-theme-text-inverse font-bold text-lg mr-4 flex-shrink-0`}
