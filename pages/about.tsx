@@ -17,10 +17,9 @@ export default function About() {
       <main className="min-h-screen pt-16">
         <AboutHeroSection />
 
-        <div className="container mx-auto px-4 py-16 max-w-4xl">
-
-          {/* What is Dune Weaver */}
-          <section className="mb-16">
+        {/* What is Dune Weaver */}
+        <Section background="white">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               What is Dune Weaver?
             </h2>
@@ -42,55 +41,58 @@ export default function About() {
                 uploading custom designs, or previewing the ball's motion.
               </p>
             </div>
-          </section>
+          </div>
+        </Section>
 
-          {/* Why Choose Dune Weaver */}
-          <section className="mb-16">
+        {/* Why Choose Dune Weaver */}
+        <Section background="gray">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Why Choose Dune Weaver?
             </h2>
-            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Affordable:</strong> Build your own for a fraction
-                    of the cost of commercial alternatives
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Open Source:</strong> Full access to designs, code,
-                    and community support
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Customizable:</strong> Modify and personalize your
-                    build to suit your preferences
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Educational:</strong> Learn about electronics,
-                    programming, and mechanical design
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-amber-600 mr-3 text-xl">✓</span>
-                  <span>
-                    <strong>Community Driven:</strong> Active Discord community
-                    for support and inspiration
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </section>
-          {/* Design Philosophy */}
-          <section className="mb-16">
+            <ul className="space-y-4 text-gray-700">
+              <li className="flex items-start">
+                <span className="text-amber-600 mr-3 text-xl">✓</span>
+                <span>
+                  <strong>Affordable:</strong> Build your own for a fraction
+                  of the cost of commercial alternatives
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-amber-600 mr-3 text-xl">✓</span>
+                <span>
+                  <strong>Open Source:</strong> Full access to designs, code,
+                  and community support
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-amber-600 mr-3 text-xl">✓</span>
+                <span>
+                  <strong>Customizable:</strong> Modify and personalize your
+                  build to suit your preferences
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-amber-600 mr-3 text-xl">✓</span>
+                <span>
+                  <strong>Educational:</strong> Learn about electronics,
+                  programming, and mechanical design
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-amber-600 mr-3 text-xl">✓</span>
+                <span>
+                  <strong>Community Driven:</strong> Active Discord community
+                  for support and inspiration
+                </span>
+              </li>
+            </ul>
+          </div>
+        </Section>
+
+        {/* Design Philosophy */}
+        <Section background="white">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Design Philosophy
             </h2>
@@ -165,10 +167,12 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </Section>
 
-          {/* The Experience */}
-          <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
+        {/* The Experience */}
+        <Section background="gray">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               The Experience
             </h2>
@@ -181,38 +185,40 @@ export default function About() {
                 meditative—and makes an unforgettable gift.
               </p>
             </div>
-          </section>
+          </div>
+        </Section>
 
-          {/* Why Build Instead of Buying */}
-          <section className="mb-16">
+        {/* Why Build Instead of Buying */}
+        <Section background="white">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Why Build Instead of Buying?
             </h2>
-            <div className="bg-white border-2 border-amber-200 rounded-lg p-8">
-              <div className="text-gray-700 space-y-4">
-                <p className="text-lg">
-                  When you build the Dune Weaver, you get the satisfaction of
-                  creating something with your own hands. You understand exactly
-                  how it works (so you can fix or modify anything), and you're
-                  building on an open platform that you truly own.
-                </p>
-                <p>
-                  <strong className="text-amber-900">
-                    No cloud dependencies. No subscription fees. No planned
-                    obsolescence.
-                  </strong>
-                </p>
-                <p>
-                  Plus, the build itself is genuinely enjoyable—there's
-                  something special about watching it come to life piece by
-                  piece.
-                </p>
-              </div>
+            <div className="text-gray-700 space-y-4">
+              <p className="text-lg">
+                When you build the Dune Weaver, you get the satisfaction of
+                creating something with your own hands. You understand exactly
+                how it works (so you can fix or modify anything), and you're
+                building on an open platform that you truly own.
+              </p>
+              <p>
+                <strong className="text-amber-900">
+                  No cloud dependencies. No subscription fees. No planned
+                  obsolescence.
+                </strong>
+              </p>
+              <p>
+                Plus, the build itself is genuinely enjoyable—there's
+                something special about watching it come to life piece by
+                piece.
+              </p>
             </div>
-          </section>
+          </div>
+        </Section>
 
-          {/* About the Creator */}
-          <section className="mb-16 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl">
+        {/* About the Creator */}
+        <Section background="gray">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Meet the Creator
             </h2>
@@ -228,10 +234,10 @@ export default function About() {
               <p>
                 I design Dune Weaver to be open, affordable, and hackable. The
                 files are open-source, the builds are 3D-print-friendly, and the
-                software runs locally. I’m constantly refining motion profiles,
+                software runs locally. I'm constantly refining motion profiles,
                 cable routing, and assembly steps so your first build feels
                 smooth, not stressful. Along the way, Dune Weaver has been
-                featured by places like Tom’s Hardware, and—more importantly—by
+                featured by places like Tom's Hardware, and—more importantly—by
                 a growing community of builders who share patterns, mods, and
                 clever fixes.
               </p>
@@ -241,16 +247,16 @@ export default function About() {
                 maker buffet. That mix shows up in Dune Weaver: careful
                 engineering where it matters, and plenty of room to customize.
                 Whether you pick up the free designs or dive into the Pro
-                versions, you’ll find clear guides, a friendly Discord, and
-                patterns that make the sand look like it’s thinking.
+                versions, you'll find clear guides, a friendly Discord, and
+                patterns that make the sand look like it's thinking.
               </p>
               <p>
-                If you’re here, you’re probably a tinkerer, a learner, or
+                If you're here, you're probably a tinkerer, a learner, or
                 someone who just loves mesmerizing things. Welcome. Grab the
-                files, join the community, and build something you’ll be proud
+                files, join the community, and build something you'll be proud
                 to leave running on the coffee table.
               </p>
-              <div className="mt-6 pt-6 border-t border-amber-200">
+              <div className="mt-6 pt-6 border-t border-gray-300">
                 <p className="text-sm text-gray-600">
                   Connect with Tuan and the Dune Weaver community on{" "}
                   <a
@@ -277,35 +283,35 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
+        </Section>
 
-          {/* Call to Action */}
-          <section className="text-center">
-            <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-xl">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Build Your Own?
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Explore the different versions and find the perfect Dune Weaver
-                for you.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/#products"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-amber-700 text-white font-semibold rounded-lg hover:bg-amber-800 transition-colors"
-                >
-                  View Products
-                </a>
-                <a
-                  href="/#community"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-amber-700 font-semibold rounded-lg border-2 border-amber-700 hover:bg-amber-50 transition-colors"
-                >
-                  Join Community
-                </a>
-              </div>
+        {/* Call to Action */}
+        <Section background="white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Ready to Build Your Own?
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Explore the different versions and find the perfect Dune Weaver
+              for you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/#products"
+                className="inline-flex items-center justify-center px-6 py-3 bg-amber-700 text-white font-semibold rounded-lg hover:bg-amber-800 transition-colors"
+              >
+                View Products
+              </a>
+              <a
+                href="/#community"
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-amber-700 font-semibold rounded-lg border-2 border-amber-700 hover:bg-amber-50 transition-colors"
+              >
+                Join Community
+              </a>
             </div>
-          </section>
-        </div>
+          </div>
+        </Section>
       </main>
 
       <Footer />
