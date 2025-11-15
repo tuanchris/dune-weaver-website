@@ -96,15 +96,17 @@ export async function getStaticProps() {
 }
 
 const config: GalleryPageConfig = {
-  pageTitle: 'DW Mini Gallery',
-  heading: 'DW Mini',
+  pageTitle: 'Dune Weaver Mini Gallery',
+  heading: 'Dune Weaver Mini',
   description: 'A free, beginner-friendly desktop sand table. Perfect for learning and creating beautiful patterns at home.',
   badge: {
     text: 'MakerWorld',
     bgColor: 'bg-badge-makerworld-bg',
     textColor: 'text-badge-makerworld-text',
   },
-  callToActionModelName: 'DW Mini',
+  callToActionModelName: 'Dune Weaver Mini',
+  productLink: 'https://makerworld.com/en/models/896314-mini-dune-weaver-not-your-typical-marble-run#profileId-854412',
+  productLinkText: 'Download Free',
 };
 
 export default function DWMiniGallery({ media }: Props) {

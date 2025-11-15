@@ -96,15 +96,17 @@ export async function getStaticProps() {
 }
 
 const config: GalleryPageConfig = {
-  pageTitle: 'OG DW Gallery',
-  heading: 'OG DW – Original',
+  pageTitle: 'Dune Weaver OG Gallery',
+  heading: 'Dune Weaver OG',
   description: 'The original open-source Dune Weaver design. A proven build with a passionate community creating innovative patterns.',
   badge: {
     text: 'MakerWorld',
     bgColor: 'bg-badge-makerworld-bg',
     textColor: 'text-badge-makerworld-text',
   },
-  callToActionModelName: 'OG DW',
+  callToActionModelName: 'Dune Weaver OG',
+  productLink: 'https://makerworld.com/en/models/841332-dune-weaver-a-3d-printed-kinetic-sand-table#profileId-787553',
+  productLinkText: 'Download Free',
 };
 
 export default function OGDWGallery({ media }: Props) {

@@ -25,6 +25,8 @@ export interface GalleryPageConfig {
     textColor: string;
   };
   callToActionModelName: string;
+  productLink: string;
+  productLinkText: string;
 }
 
 interface Props {
@@ -170,31 +172,53 @@ export const GalleryPageTemplate: React.FC<Props> = ({ media, config }) => {
           <div className="mt-16 text-center">
             <div className="bg-theme-surface rounded-lg shadow-md p-8 max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-theme-text-primary mb-4">
-                Share Your Creations
+                Join the Dune Weaver Community
               </h2>
               <p className="text-theme-text-secondary mb-6">
-                Have you created amazing patterns with your {config.callToActionModelName}? Share them with
-                the community and get featured in our gallery!
+                Build your own {config.callToActionModelName} or share your amazing patterns with the community!
               </p>
-              <a
-                href="https://discord.gg/mkbXyP6pw8"
-                className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
-              >
-                Submit Your Photos
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={config.productLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
+                  {config.productLinkText}
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://discord.gg/mkbXyP6pw8"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold"
+                >
+                  Submit Your Photos
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>

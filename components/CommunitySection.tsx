@@ -24,7 +24,7 @@ const communityLinks: CommunityLink[] = [
   },
   {
     name: 'Patreon',
-    description: 'Support the project and get access to premium builds',
+    description: 'Join for free to receive updates about this project',
     link: 'https://www.patreon.com/cw/duneweaver/shop',
     icon: '💎',
   },

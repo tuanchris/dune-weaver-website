@@ -28,7 +28,7 @@ export default function DocPage({ document }: DocPageProps) {
 
       {/* Content */}
       <Section background="white">
-         <div className="mb-6">
+         <div className="mb-6 my-8">
             <Button href="/docs" variant="outline">
               ← Back to Documentation
             </Button>
@@ -140,8 +140,8 @@ export default function DocPage({ document }: DocPageProps) {
       {/* Footer Navigation */}
       <Section background="gray">
         <div className="py-8 text-center">
-          <Button href="/docs" variant="primary">
-            Back to Documentation
+          <Button href="/docs" variant="outline">
+            ← Back to Documentation
           </Button>
         </div>
       </Section>

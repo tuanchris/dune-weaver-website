@@ -15,9 +15,22 @@ export const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-theme-overlay-light backdrop-blur-sm shadow-sm">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
+            <div
+              className="w-12 h-12 my-2 bg-theme-text-brand flex-shrink-0"
+              style={{
+                maskImage: 'url(/images/logo.svg)',
+                maskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center',
+                WebkitMaskImage: 'url(/images/logo.svg)',
+                WebkitMaskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center',
+              }}
+            />
             <span className="text-2xl font-bold text-theme-text-brand">Dune Weaver</span>
           </Link>
 

@@ -96,15 +96,17 @@ export async function getStaticProps() {
 }
 
 const config: GalleryPageConfig = {
-  pageTitle: 'DWMP Mini Pro Gallery',
-  heading: 'DWMP – Mini Pro',
+  pageTitle: 'Dune Weaver Mini Pro Gallery',
+  heading: 'Dune Weaver Mini Pro',
   description: 'A compact powerhouse combining portability with professional features. Explore beautiful patterns created by the community.',
   badge: {
     text: '💎 Patreon',
     bgColor: 'bg-badge-patreon-bg',
     textColor: 'text-badge-patreon-text',
   },
-  callToActionModelName: 'DWMP Mini Pro',
+  callToActionModelName: 'Dune Weaver Mini Pro',
+  productLink: 'https://www.patreon.com/posts/dune-weaver-mini-141674449',
+  productLinkText: 'Get on Patreon',
 };
 
 export default function DWMPMiniProGallery({ media }: Props) {

@@ -96,15 +96,17 @@ export async function getStaticProps() {
 }
 
 const config: GalleryPageConfig = {
-  pageTitle: 'DWP Pro Gallery',
-  heading: 'DWP – Dune Weaver Pro',
+  pageTitle: 'Dune Weaver Pro Gallery',
+  heading: 'Dune Weaver Pro',
   description: 'The ultimate kinetic sand table. Full-sized with professional-grade components creating spectacular large-scale patterns.',
   badge: {
     text: '💎 Patreon',
     bgColor: 'bg-badge-patreon-bg',
     textColor: 'text-badge-patreon-text',
   },
-  callToActionModelName: 'DWP Pro',
+  callToActionModelName: 'Dune Weaver Pro',
+  productLink: 'https://www.patreon.com/posts/dune-weaver-pro-137394378',
+  productLinkText: 'Get on Patreon',
 };
 
 export default function DWPProGallery({ media }: Props) {
