@@ -30,9 +30,13 @@ From v2.0 onward, Dune Weaver transitioned from custom firmware to FluidNC.
 **Configuration Upload:**
 After firmware installation, upload the corresponding config file from the `firmware` folder via File browser, then restart the board.
 
+![File Browser](/images/docs/installing-firmware/01-file-browser.png)
+
 **Motor Direction Verification:**
 - Command `$J=G91 G21 Y5 F100.0` should move ball outward
 - Command `$J=G91 G21 X5 F100.0` should move ball clockwise
+
+![Motor Verification Commands](/images/docs/installing-firmware/02-motor-verification.png)
 
 If incorrect, reverse motor directions using pin swaps (Mini) or config toggle (DLC32).
 

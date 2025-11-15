@@ -102,24 +102,24 @@ export const FeatureComparison: React.FC = () => {
         </p>
       </div>
 
-      {/* Desktop View - Table */}
-      <div className="hidden lg:block overflow-x-auto rounded-xl border border-theme-border-light shadow-lg">
+      {/* Scrollable Table */}
+      <div className="overflow-x-auto rounded-xl border border-theme-border-light shadow-lg">
         <table className="w-full bg-theme-surface">
           <thead>
             <tr className="border border-theme-border-light">
-              <th className="px-6 py-4 text-left text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-3 lg:py-4 text-left text-xs lg:text-sm font-bold text-theme-text-secondary uppercase tracking-wider whitespace-nowrap sticky left-0 bg-theme-surface z-10">
                 Feature
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-3 lg:py-4 text-center text-xs lg:text-sm font-bold text-theme-text-secondary uppercase tracking-wider whitespace-nowrap">
                 Pro
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-3 lg:py-4 text-center text-xs lg:text-sm font-bold text-theme-text-secondary uppercase tracking-wider whitespace-nowrap">
                 Mini Pro
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-3 lg:py-4 text-center text-xs lg:text-sm font-bold text-theme-text-secondary uppercase tracking-wider whitespace-nowrap">
                 OG
               </th>
-              <th className="px-6 py-4 text-center text-sm font-bold text-theme-text-secondary uppercase tracking-wider">
+              <th className="px-4 lg:px-6 py-3 lg:py-4 text-center text-xs lg:text-sm font-bold text-theme-text-secondary uppercase tracking-wider whitespace-nowrap">
                 Mini
               </th>
             </tr>
@@ -132,51 +132,17 @@ export const FeatureComparison: React.FC = () => {
                   index % 2 === 0 ? 'bg-sand-800' : 'bg-sand-900'
                 } border border-theme-border-light transition-colors`}
               >
-                <td className="px-6 py-4 text-sm font-semibold text-theme-text-primary">
+                <td className="px-4 lg:px-6 py-3 lg:py-4 text-xs lg:text-sm font-semibold text-theme-text-primary whitespace-nowrap sticky left-0 bg-inherit z-10">
                   {feature.name}
                 </td>
-                <td className="px-6 py-4 text-center">{renderCell(feature.pro)}</td>
-                <td className="px-6 py-4 text-center">{renderCell(feature.miniPro)}</td>
-                <td className="px-6 py-4 text-center">{renderCell(feature.og)}</td>
-                <td className="px-6 py-4 text-center">{renderCell(feature.mini)}</td>
+                <td className="px-4 lg:px-6 py-3 lg:py-4 text-center whitespace-nowrap">{renderCell(feature.pro)}</td>
+                <td className="px-4 lg:px-6 py-3 lg:py-4 text-center whitespace-nowrap">{renderCell(feature.miniPro)}</td>
+                <td className="px-4 lg:px-6 py-3 lg:py-4 text-center whitespace-nowrap">{renderCell(feature.og)}</td>
+                <td className="px-4 lg:px-6 py-3 lg:py-4 text-center whitespace-nowrap">{renderCell(feature.mini)}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
-
-      {/* Mobile & Tablet View - Cards */}
-      <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          { name: 'Dune Weaver Pro', key: 'pro' as const, badge: '💎 Patreon', badgeColor: 'bg-badge-patreon-bg text-badge-patreon-text' },
-          { name: 'Dune Weaver Mini Pro', key: 'miniPro' as const, badge: '💎 Patreon', badgeColor: 'bg-badge-patreon-bg text-badge-patreon-text' },
-          { name: 'Dune Weaver OG', key: 'og' as const, badge: 'MakerWorld', badgeColor: 'bg-badge-makerworld-bg text-badge-makerworld-text' },
-          { name: 'Dune Weaver Mini', key: 'mini' as const, badge: 'MakerWorld', badgeColor: 'bg-badge-makerworld-bg text-badge-makerworld-text' },
-        ].map((product) => (
-          <div key={product.key} className="bg-theme-surface rounded-xl shadow-lg overflow-hidden border border-theme-border-light">
-            <div className="bg-theme-surface p-6 border-b border-theme-border-light">
-              <h3 className="text-xl font-bold text-theme-text-primary mb-2">{product.name}</h3>
-              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${product.badgeColor}`}>
-                {product.badge}
-              </span>
-            </div>
-            <div>
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`flex justify-between items-center px-6 py-4 ${
-                    index % 2 === 0 ? 'bg-sand-800' : 'bg-sand-900'
-                  } border-b border-theme-border-light last:border-b-0`}
-                >
-                  <span className="text-sm font-semibold text-theme-text-primary">{feature.name}</span>
-                  <div className="text-right">
-                    {renderCell(feature[product.key])}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

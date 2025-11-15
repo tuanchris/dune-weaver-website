@@ -25,10 +25,10 @@ export const Footer: React.FC = () => {
       { name: 'MakerWorld', href: 'https://makerworld.com/en/@tuanchris', external: true },
     ],
     guides: [
-      { name: 'Getting Started', href: '/docs/home' },
-      { name: 'Assembly Guides', href: '/docs/dwmp-assembly' },
+      { name: 'Dune Weaver Pro', href: '/docs/dune-weaver-pro' },
+      { name: 'Dune Weaver Mini Pro', href: '/docs/dune-weaver-mini-pro' },
       { name: 'Installing Firmware', href: '/docs/installing-firmware' },
-      { name: 'Wiring Guide', href: '/docs/wiring' },
+      { name: 'Installing Software', href: '/docs/deploying-backend' },
     ],
   };
 

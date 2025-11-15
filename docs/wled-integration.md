@@ -11,6 +11,8 @@ date: 2025-01-28
 
 Dune-Weaver integrates with WLED, an open-source firmware for ESP8266/ESP32-based LED controllers, enabling automation of lighting effects. A separate ESP32 is required to control addressable LEDs.
 
+![WLED Integration Overview](/images/docs/wled-integration/01-overview.jpeg)
+
 With WLED integration configured, Dune Weaver provides:
 - Loading effect during boot-up
 - Green blinking signal indicating successful startup
@@ -44,12 +46,21 @@ With WLED integration configured, Dune Weaver provides:
 ## Setting up WLED with Dune Weaver
 
 1. Navigate to settings and configure WLED IP address
+
+![WLED IP Configuration](/images/docs/wled-integration/02-ip-config.png)
 2. In WLED UI, create two playlists:
    - **ID 1**: Idle effect
    - **ID 2**: Playing effect
+
+![Playlist Setup](/images/docs/wled-integration/03-playlist-setup.png)
 3. Follow ID assignment strictly for code functionality
 4. Example idle setup: auto turn-off after 2 minutes
+
+![Idle Playlist Configuration](/images/docs/wled-integration/04-idle-playlist.png)
 5. Configure playing effect playlist as desired
+
+![Playing Effect Configuration](/images/docs/wled-integration/05-playing-effect.png)
+
 6. Customize playlists to preference (or use presets for simpler control)
 
 For additional support, join the [Discord community](https://discord.gg/YZ8PTezVHt).

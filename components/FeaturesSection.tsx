@@ -33,7 +33,7 @@ const features: Feature[] = [
 export const FeaturesSection: React.FC = () => {
   return (
     <Section id="features" background="sand">
-      <div className="text-center mb-12">
+      <div className="text-center mb-6 md:mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Built on Principles
         </h2>
@@ -42,17 +42,17 @@ export const FeaturesSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-theme-surface rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-theme-border-light"
+            className="bg-theme-surface rounded-lg p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow border border-theme-border-light"
           >
-            <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-bold text-theme-text-primary mb-3">
+            <div className="text-2xl md:text-4xl mb-2 md:mb-4">{feature.icon}</div>
+            <h3 className="text-base md:text-xl font-bold text-theme-text-primary mb-2 md:mb-3">
               {feature.title}
             </h3>
-            <p className="text-theme-text-secondary leading-relaxed">
+            <p className="text-sm md:text-base text-theme-text-secondary leading-relaxed">
               {feature.description}
             </p>
           </div>

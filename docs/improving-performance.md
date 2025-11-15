@@ -24,6 +24,8 @@ Based on experimental observations:
 
 ## Baking Soda vs. 80–100 Mesh Sand
 
+![Baking Soda Pattern](/images/docs/improving-performance/01-baking-soda.png)
+
 ### Baking Soda
 **Advantages:**
 - Creates uniform, fine-grained surface reducing wiggling
@@ -35,6 +37,9 @@ Based on experimental observations:
 - Absorbs moisture over time
 
 ### 80–100 Mesh Sand
+
+![80-100 Mesh Sand Pattern](/images/docs/improving-performance/02-mesh-sand.png)
+
 **Advantages:**
 - Provides defined visual and tactile feedback
 - Customizable (can mix with additives like UV-reactive materials)
@@ -49,10 +54,16 @@ Based on experimental observations:
 
 ## Ball Selection and Modifications
 
+![Ball Selection Overview](/images/docs/improving-performance/03-ball-selection.png)
+
 ### Understanding Ball Wiggling
 The ball wiggles when "it hits a relatively large grain of sand or baking soda on a hard surface." This inconsistency can disconnect magnetic balls from the magnet, especially at outer edges where the radial arm bends.
 
+![Ball Wiggling Diagram](/images/docs/improving-performance/04-ball-wiggling.jpeg)
+
 ### Magnetic Ball Options
+
+![Magnetic Ball Stability](/images/docs/improving-performance/05-magnetic-ball.jpeg)
 
 **Advantages:**
 - Enhanced stability, particularly with thicker trays
@@ -66,15 +77,23 @@ The ball wiggles when "it hits a relatively large grain of sand or baking soda o
 
 ### Ball Size Recommendations
 
+![Ball Size Options](/images/docs/improving-performance/06-ball-sizes.png)
+
 - **5mm**: Too small and light; may cause wiggling
 - **10mm**: "Works best for me, especially with a little wear in the bottom"
 - **15mm**: Functions well without resolution loss; produces larger lines
 
 **Maintenance Note**: Bottom wear gradually expands over time. Some builders experiment with foam padding to prevent excessive degradation.
 
+![Magnetic Ball Wear Progression](/images/docs/improving-performance/07-ball-wear.png)
+
+![Foam Bottom Modification](/images/docs/improving-performance/08-foam-bottom.png)
+
 ---
 
 ## Faux Leather Enhancements
+
+![Faux Leather Enhancement](/images/docs/improving-performance/09-faux-leather.png)
 
 **Advantages:**
 - Causes sand to sink slightly when the ball passes, smoothing its path

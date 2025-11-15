@@ -39,7 +39,7 @@ const communityLinks: CommunityLink[] = [
 export const CommunitySection: React.FC = () => {
   return (
     <Section id="community" background="sand">
-      <div className="text-center mb-12">
+      <div className="text-center mb-6 md:mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Join the Community
         </h2>
@@ -48,16 +48,16 @@ export const CommunitySection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
         {communityLinks.map((link, index) => (
           <div
             key={index}
-            className="bg-theme-surface rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-200"
+            className="bg-theme-surface rounded-xl p-4 md:p-6 text-center hover:shadow-lg transition-shadow duration-200"
           >
-            <div className="text-4xl mb-3">{link.icon}</div>
-            <h3 className="text-xl font-bold text-theme-text-primary mb-2">{link.name}</h3>
-            <p className="text-theme-text-secondary mb-4 text-sm">{link.description}</p>
-            <Button href={link.link} variant="outline" className="w-full bg-theme-primary text-theme-text-inverse hover:bg-theme-primary-hover">
+            <div className="text-2xl md:text-4xl mb-2 md:mb-3">{link.icon}</div>
+            <h3 className="text-base md:text-xl font-bold text-theme-text-primary mb-2">{link.name}</h3>
+            <p className="text-theme-text-secondary mb-3 md:mb-4 text-xs md:text-sm">{link.description}</p>
+            <Button href={link.link} variant="outline" className="w-full bg-theme-primary text-theme-text-inverse hover:bg-theme-primary-hover text-xs md:text-sm">
               Visit {link.name}
             </Button>
           </div>

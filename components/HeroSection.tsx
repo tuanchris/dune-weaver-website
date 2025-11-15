@@ -81,7 +81,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <div className="relative w-full h-[80vh] md:h-screen md:min-h-[600px] overflow-hidden">
       {/* Background Image - shown for first 5 seconds */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -116,8 +116,8 @@ export const HeroSection: React.FC = () => {
 
       {/* Content */}
       <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-full flex items-center">
-          <div className="text-left max-w-2xl">
+        <div className="h-full flex items-end md:items-center pb-8 md:pb-0">
+          <div className="text-left max-w-2xl scale-[0.8] md:scale-100 origin-bottom-left">
             <h1 className="text-3xl md:text-5xl font-bold text-theme-text-inverse mb-4 drop-shadow-lg">
               Dune Weaver
             </h1>

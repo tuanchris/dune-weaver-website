@@ -25,6 +25,10 @@ Users should employ the Raspberry Pi Imager to install the 64-bit OS. Key setup 
 - Disabling WLAN Power Save via `raspi-config`
 - Running system updates (`sudo apt update` and `sudo apt full-upgrade`)
 
+![Raspberry Pi Imager Setup](/images/docs/deploying-backend/01-pi-imager.png)
+
+![Advanced Options Configuration](/images/docs/deploying-backend/02-advanced-options.png)
+
 ### SSH Access
 Connect remotely using: `ssh pi@raspberrypi.local`
 
