@@ -11,39 +11,83 @@ date: 2025-01-28
 
 1. **Assemble the IKEA leg upside down**
 
+   ![IKEA leg assembly](/images/docs/assembly/01-ikea-leg.png)
+
 2. **Add the base and secure the base aligner underneath with 4 M4x15mm self-tapping wood screws**
+
+   ![Base and aligner installation](/images/docs/assembly/02-base-aligner.png)
+
+   ![Base aligner detail](/images/docs/assembly/03-base-aligner-detail.png)
 
 3. **Connect the motor cable, add the motors and secure** the motors to the holder with 4 M3x10mm machine screw for each motor. Secure the motor with the aligner to the base with 2 M4x15mm self-tapping wood screws for each motor.
 
+   ![Motor installation](/images/docs/assembly/04-motor-installation.png)
+
 4. **Add the bearing to the outer bearing holder.** Secure with M4 set screws or scale the model for a tight press fit. You can also use a dap of glue to hold the bearing in place.
+
+   ![Outer bearing holder](/images/docs/assembly/05-outer-bearing-holder.png)
 
 5. **Add the inner bearing to the angular gear and glue it in place.** Wait for the glue to completely dry.
 
+   ![Inner bearing and angular gear](/images/docs/assembly/06-inner-bearing-angular-gear.png)
+
 6. **Press fit the angular gear to the bearing.** Add set screws or glue to secure it in place. Make sure that the inner bearing moves when the angular gear moves.
+
+   ![Angular gear press fit](/images/docs/assembly/07-angular-gear-press-fit.png)
 
 7. **Add the assembly to the base and secure with 4 M4x15mm self tapping screws.**
 
+   ![Assembly mounted to base](/images/docs/assembly/08-assembly-to-base.png)
+
 8. **Add the radial arm and the inner spur gear**
+
+   ![Radial arm and inner spur gear](/images/docs/assembly/09-radial-arm-spur-gear.png)
 
 9. **Secure the Raspberry Pi 2W** (with usb cabled attached). Then secure the dlc32 board on top of the usb cable. Test electronics before proceeding with wiring.
 
+   ![Raspberry Pi and DLC32 installation](/images/docs/assembly/10-pi-dlc32-installation.png)
+
 10. **After completing wiring, install the electronics cover**
+
+    ![Electronics cover](/images/docs/assembly/11-electronics-cover.png)
 
 11. **Trace and cut out the EVA** to the shape of the wooden base. Add minimal glue if EVA foam curls.
 
+    ![EVA foam preparation](/images/docs/assembly/12-eva-foam.png)
+
 12. **Add the led wires**
+
+    ![LED wiring installation](/images/docs/assembly/13-led-wiring.png)
 
 13. **Assemble the enclosure around the wooden sand bed**
 
+    ![Enclosure assembly step 1](/images/docs/assembly/14-enclosure-1.png)
+
+    ![Enclosure assembly step 2](/images/docs/assembly/15-enclosure-2.png)
+
+    ![Enclosure assembly step 3](/images/docs/assembly/16-enclosure-3.png)
+
 14. **Optional: Caulk the bottom of the sand bed to prevent sand from escaping**
+
+    ![Caulking the sand bed](/images/docs/assembly/17-caulking.jpeg)
 
 15. **Add approximately 1.4kg of sand and the magnetic ball.** Sand should cover about 25% of the magnetic ball height. Install the LEDs and solder connections.
 
+    ![LED and sand installation](/images/docs/assembly/18-led-sand-installation.png)
+
 16. **Add the LED cover to the glass and put the glass ring on**
+
+    ![Glass ring assembly step 1](/images/docs/assembly/19-glass-ring-1.png)
+
+    ![Glass ring assembly step 2](/images/docs/assembly/20-glass-ring-2.png)
 
 17. **Put the sand bed on the four legs. Add the glass ring with the glass on top**
 
+    ![Complete table assembly](/images/docs/assembly/21-complete-table.png)
+
 ## Wiring
+
+![Wiring diagram overview](/images/docs/assembly/22-wiring-diagram.png)
 
 ### Pi Zero 2W and DLC32 Connection
 
@@ -74,10 +118,16 @@ date: 2025-01-28
 - Connect power cable to female 12V plug
 - Run power wires through the steel tube
 
+![Power cable routing](/images/docs/assembly/23-power-cable.jpeg)
+
 ### LED Wiring
 
 - Create connector plug for LED removal when detaching table top
 - Green cable = data cable (connects to pin 16 on ESP32)
+
+![LED connector plug](/images/docs/assembly/24-led-connector.jpeg)
+
+![LED data cable connection](/images/docs/assembly/25-led-data-cable.jpeg)
 
 ## Additional Resources
 

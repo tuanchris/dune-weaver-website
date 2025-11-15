@@ -33,6 +33,8 @@ A quick, safe procedure to set motor current on DW tables.
 - **Red lead (clip):** vref adjustment screw. Use an alligator clip to clip to a screwdriver so you can measure and adjust simultaneously
 - **Black probe (hand‑held):** any **GND** pad or PSU −.
 
+![VREF adjustment diagram](/images/docs/vref/vref-adjustment.png)
+
 ### Procedure
 
 1. **Power off.** Clip **red** lead to **VREF**. Position the **black** probe on **GND**.

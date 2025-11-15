@@ -34,6 +34,8 @@ Based on experimental observations:
 - Limited customization options
 - Absorbs moisture over time
 
+![Baking soda surface](/images/docs/performance/baking-soda-surface.png)
+
 ### 80–100 Mesh Sand
 **Advantages:**
 - Provides defined visual and tactile feedback
@@ -45,12 +47,16 @@ Based on experimental observations:
 - Thicker trays amplify bouncing issues
 - Requires careful pairing with appropriate ball types
 
+![80-100 mesh sand surface](/images/docs/performance/80-100-mesh-sand.png)
+
 ---
 
 ## Ball Selection and Modifications
 
 ### Understanding Ball Wiggling
 The ball wiggles when "it hits a relatively large grain of sand or baking soda on a hard surface." This inconsistency can disconnect magnetic balls from the magnet, especially at outer edges where the radial arm bends.
+
+![Ball wiggling explanation](/images/docs/performance/ball-wiggling.jpeg)
 
 ### Magnetic Ball Options
 
@@ -64,13 +70,23 @@ The ball wiggles when "it hits a relatively large grain of sand or baking soda o
 - Worn ball bottoms may widen, creating thicker lines
 - Initially increases noise by 10-20% (diminishes as wear flattens the bottom)
 
+![Ball selection comparison](/images/docs/performance/ball-selection.png)
+
+![Magnetic ball stability](/images/docs/performance/magnetic-ball-stability.jpeg)
+
 ### Ball Size Recommendations
 
 - **5mm**: Too small and light; may cause wiggling
 - **10mm**: "Works best for me, especially with a little wear in the bottom"
 - **15mm**: Functions well without resolution loss; produces larger lines
 
+![Ball size comparison](/images/docs/performance/ball-size-comparison.png)
+
 **Maintenance Note**: Bottom wear gradually expands over time. Some builders experiment with foam padding to prevent excessive degradation.
+
+![Magnetic ball wear progression](/images/docs/performance/magnetic-ball-wear.png)
+
+![Foam-padded ball modification](/images/docs/performance/foam-padded-ball.png)
 
 ---
 
@@ -84,6 +100,8 @@ The ball wiggles when "it hits a relatively large grain of sand or baking soda o
 **Disadvantages:**
 - Increases overall thickness
 - May require eventual replacement with extended use
+
+![Faux leather enhancement](/images/docs/performance/faux-leather.png)
 
 ---
 

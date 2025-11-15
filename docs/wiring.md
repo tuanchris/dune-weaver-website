@@ -24,7 +24,11 @@ This is one of the most common configurations. The TMC2209 stepper drivers provi
 - Higher current capacity
 - Better heat dissipation
 
+![CNC Shield + TMC2209 wiring diagram](/images/docs/wiring/cnc-shield-tmc2209.png)
+
 **Important**: Make sure the motor wire colors match the expected sequence. If your motors don't work correctly, try swapping the middle two wires.
+
+![Motor wire swap configuration](/images/docs/wiring/tmc2209-wire-swap.png)
 
 ### CNC Shield + DRV8825
 
@@ -33,9 +37,13 @@ An alternative stepper driver configuration. The DRV8825 provides:
 - Good torque
 - Simpler configuration
 
+![CNC Shield + DRV8825 wiring diagram](/images/docs/wiring/cnc-shield-drv8825.png)
+
 ### ESP32 Direct Connection
 
 For builds using an ESP32 microcontroller directly without a CNC shield. This configuration is common for the Mini version with unipolar stepper motors.
+
+![ESP32 wiring diagram](/images/docs/wiring/esp32-wiring.png)
 
 ## Troubleshooting Wiring Issues
 
