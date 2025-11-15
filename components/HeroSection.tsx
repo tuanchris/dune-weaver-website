@@ -147,16 +147,16 @@ export const HeroSection: React.FC = () => {
       ))}
 
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 bg-theme-overlay"></div>
 
       {/* Content */}
       <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-full flex items-center">
           <div className="text-left max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            <h1 className="text-3xl md:text-5xl font-bold text-theme-text-inverse mb-4 drop-shadow-lg">
               Dune Weaver
             </h1>
-            <p className="text-lg md:text-xl text-white mb-6 md:mb-8 drop-shadow-lg">
+            <p className="text-lg md:text-xl text-theme-text-inverse mb-6 md:mb-8 drop-shadow-lg">
               Build a mesmerizing kinetic sand machine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

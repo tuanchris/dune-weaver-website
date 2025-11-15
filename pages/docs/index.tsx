@@ -52,14 +52,14 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
 
       <Header />
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-theme-background-alt">
         {/* Header */}
         <Section background="white">
         <div className="text-center py-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-theme-text-primary mb-4">
             Documentation
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-theme-text-secondary max-w-3xl mx-auto">
             Everything you need to know about building, configuring, and using your Dune Weaver kinetic sand table.
           </p>
 
@@ -71,12 +71,12 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
                 placeholder="Search documentation..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-sand-500 focus:ring-2 focus:ring-sand-200 transition-all"
+                className="w-full px-6 py-4 text-lg border-2 border-theme-border-strong rounded-lg focus:outline-none focus:border-theme-border-sand-strong focus:ring-2 focus:ring-sand-200 transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-theme-text-muted hover:text-theme-text-secondary"
                   aria-label="Clear search"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,10 +99,10 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
       {isSearching ? (
         <Section background="gray">
           <div className="py-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-theme-text-primary mb-4">
               Search Results
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-theme-text-secondary mb-8">
               Found {filteredDocuments.length} {filteredDocuments.length === 1 ? 'document' : 'documents'} matching "{searchQuery}"
             </p>
             {filteredDocuments.length > 0 ? (
@@ -113,8 +113,8 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-xl text-gray-500">No documents found matching your search.</p>
-                <p className="text-gray-400 mt-2">Try different keywords or browse all documents below.</p>
+                <p className="text-xl text-theme-text-tertiary">No documents found matching your search.</p>
+                <p className="text-theme-text-muted mt-2">Try different keywords or browse all documents below.</p>
               </div>
             )}
           </div>
@@ -126,8 +126,8 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
             <Section background="gray">
               <div className="py-12">
                 <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-3">Build Paths</h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <h2 className="text-3xl font-bold text-theme-text-primary mb-3">Build Paths</h2>
+                  <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
                     Follow our step-by-step guides to build your Dune Weaver table from start to finish
                   </p>
                 </div>
@@ -143,7 +143,7 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
           {/* All Documents */}
           <Section background="white">
             <div className="py-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">All Documents</h2>
+              <h2 className="text-3xl font-bold text-theme-text-primary mb-8">All Documents</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {allDocuments.map((doc) => (
                   <DocumentCard key={doc.slug} document={doc} />
@@ -155,15 +155,15 @@ export default function DocsPage({ groupedDocuments, allDocuments, buildPaths }:
           {/* Documents by Table Type */}
           <Section background="gray">
             <div className="py-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Browse by Table Type</h2>
+              <h2 className="text-3xl font-bold text-theme-text-primary mb-8">Browse by Table Type</h2>
 
               {sortedTableTypes.map((tableType) => (
                 <div key={tableType} className="mb-12">
                   <div className="flex items-center mb-6">
-                    <span className="inline-block px-4 py-2 bg-sand-500 text-white rounded-full text-sm font-semibold uppercase tracking-wide">
+                    <span className="inline-block px-4 py-2 bg-theme-border-sand-strong text-theme-text-inverse rounded-full text-sm font-semibold uppercase tracking-wide">
                       {tableType}
                     </span>
-                    <div className="flex-1 h-px bg-gray-300 ml-4"></div>
+                    <div className="flex-1 h-px bg-theme-border-strong ml-4"></div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -193,13 +193,13 @@ function DocumentCard({ document, searchQuery }: DocumentCardProps) {
   return (
     <Link
       href={`/docs/${document.slug}`}
-      className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-200 hover:border-sand-500"
+      className="block bg-theme-surface border border-theme-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-200 hover:border-theme-border-sand-strong"
     >
-      <h3 className="text-xl font-bold text-gray-900 mb-2">
+      <h3 className="text-xl font-bold text-theme-text-primary mb-2">
         {document.metadata.title}
       </h3>
 
-      <p className="text-gray-600 mb-4 line-clamp-2">
+      <p className="text-theme-text-secondary mb-4 line-clamp-2">
         {document.metadata.description}
       </p>
 
@@ -210,7 +210,7 @@ function DocumentCard({ document, searchQuery }: DocumentCardProps) {
       </div>
 
       {document.metadata.date && (
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-theme-text-tertiary">
           {new Date(document.metadata.date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',

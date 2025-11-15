@@ -3,8 +3,44 @@
 @tailwind utilities;
 
 :root {
+  /* Legacy RGB variables */
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+
+  /* Theme color variables for easy customization */
+  /* Primary brand colors */
+  --color-primary: #a67d5e;
+  --color-primary-light: #b8906a;
+  --color-primary-dark: #8a6a50;
+
+  /* Secondary brand colors */
+  --color-secondary: #d97706;
+  --color-secondary-light: #f59e0b;
+  --color-secondary-dark: #b45309;
+
+  /* Background colors */
+  --color-background: #ffffff;
+  --color-background-alt: #f9fafb;
+  --color-background-sand: #fdfaf6;
+
+  /* Text colors */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-tertiary: #6b7280;
+  --color-text-inverse: #ffffff;
+  --color-text-brand: #78350f;
+
+  /* Border colors */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-border-strong: #d1d5db;
+
+  /* Interactive states */
+  --color-focus: #3b82f6;
+
+  /* Footer */
+  --color-footer-bg: #111827;
+  --color-footer-text: #d1d5db;
 }
 
 body {

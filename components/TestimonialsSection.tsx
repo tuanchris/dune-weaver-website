@@ -15,56 +15,56 @@ const testimonials: Testimonial[] = [
     role: 'Maker',
     content: 'Everything worked flawlessly. The Table looks even better than expected and the patterns are so Beautiful  😄',
     initials: 'LD',
-    avatarColor: 'bg-green-500',
+    avatarColor: 'bg-avatar-green',
   },
   {
     name: 'RealGoose',
     role: 'Maker',
-    content: 'Sharing an update on this DW Mini. Started running 3/20/25 and has been running 24/7 on my desk at work. That’s 3,864 hours and counting!',
+    content: 'Sharing an update on this DW Mini. Started running 3/20/25 and has been running 24/7 on my desk at work. That's 3,864 hours and counting!',
     initials: 'RG',
-    avatarColor: 'bg-blue-500',
+    avatarColor: 'bg-avatar-blue',
   },
   {
     name: 'm8tec',
     role: 'Maker',
-    content: "Thanks for creating this project, making it freely available for everyone to rebuild, maintaining it and even giving support here. It is not self-evident that you are doing that. It’s a very fascinating machine and it made a lot of fun to work with you at it.",
+    content: "Thanks for creating this project, making it freely available for everyone to rebuild, maintaining it and even giving support here. It is not self-evident that you are doing that. It's a very fascinating machine and it made a lot of fun to work with you at it.",
     initials: 'MT',
-    avatarColor: 'bg-purple-500',
+    avatarColor: 'bg-avatar-purple',
   },
   {
     name: 'MaxVonEvil',
     role: 'Maker',
     content: 'So, a colleague of mine have been building our duneweaver tables in tandem for the last couple of weeks when time allowed. It was a super fun project where we both learned a lot. ',
     initials: 'MV',
-    avatarColor: 'bg-amber-500',
+    avatarColor: 'bg-avatar-amber',
   },
   {
     name: 'Aaron N',
     role: 'Maker',
     content: 'Thank you for the awesome work on this project! The Duneweaver software is working great and my wife has even allowed me to put it in the living room! ',
     initials: 'AN',
-    avatarColor: 'bg-pink-500',
+    avatarColor: 'bg-avatar-pink',
   },
   {
     name: 'M0neyM',
     role: 'Maker',
     content: 'Finished Pro, so appreciative of this project and all the help through discord. ',
     initials: 'MM',
-    avatarColor: 'bg-indigo-500',
+    avatarColor: 'bg-avatar-indigo',
   },
   {
     name: 'Loc',
     role: 'Maker',
     content: 'Just built a Dune Weaver Mini! Overall, very happy with it -- Thanks Tuan for sharing this awesome project with us!',
     initials: 'L',
-    avatarColor: 'bg-green-500',
+    avatarColor: 'bg-avatar-green',
   },
   {
     name: 'Chiumanfu',
     role: 'Maker',
     content: "I have give you credit for a very well thought out design... one of the best DIY designs I've come across!",
     initials: 'C',
-    avatarColor: 'bg-blue-500',
+    avatarColor: 'bg-avatar-blue',
   },
 ];
 
@@ -153,10 +153,10 @@ export const TestimonialsSection: React.FC = () => {
   return (
     <Section id="testimonials" background="sand">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           What Makers Are Saying
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
           Hear from the makers who have brought Dune Weaver into their lives.
         </p>
       </div>
@@ -169,11 +169,11 @@ export const TestimonialsSection: React.FC = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus"
           aria-label="Previous testimonial"
         >
           <svg
-            className="w-6 h-6 text-gray-800"
+            className="w-6 h-6 text-sand-800"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -189,11 +189,11 @@ export const TestimonialsSection: React.FC = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-theme-surface rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-theme-focus"
           aria-label="Next testimonial"
         >
           <svg
-            className="w-6 h-6 text-gray-800"
+            className="w-6 h-6 text-sand-800"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -218,21 +218,21 @@ export const TestimonialsSection: React.FC = () => {
               key={index}
               className="flex-shrink-0 w-full md:w-[calc(33.333%-1.5rem)] snap-center"
             >
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
+              <div className="bg-theme-surface rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="flex items-center mb-6">
                   <div
-                    className={`w-12 h-12 ${testimonial.avatarColor} rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 flex-shrink-0`}
+                    className={`w-12 h-12 ${testimonial.avatarColor} rounded-full flex items-center justify-center text-theme-text-inverse font-bold text-lg mr-4 flex-shrink-0`}
                   >
                     {testimonial.initials}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">
+                    <h3 className="text-lg font-bold text-theme-text-primary">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <p className="text-sm text-theme-text-tertiary">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed italic">
+                <p className="text-theme-text-secondary leading-relaxed italic">
                   "{testimonial.content}"
                 </p>
               </div>
@@ -248,8 +248,8 @@ export const TestimonialsSection: React.FC = () => {
               onClick={() => handleIndicatorClick(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-blue-500 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-theme-focus w-8'
+                  : 'bg-theme-border-strong hover:bg-theme-text-muted'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

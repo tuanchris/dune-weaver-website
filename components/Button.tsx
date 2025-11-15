@@ -16,9 +16,9 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'px-6 py-3 rounded-lg font-medium transition-colors duration-200 inline-block text-center';
 
   const variantStyles = {
-    primary: 'bg-sand-600 text-white hover:bg-sand-700',
-    secondary: 'bg-gray-800 text-white hover:bg-gray-900',
-    outline: 'border-2 border-sand-600 text-sand-600 hover:bg-sand-50',
+    primary: 'bg-theme-primary text-theme-text-inverse hover:bg-theme-primary-hover',
+    secondary: 'bg-sand-800 text-theme-text-inverse hover:bg-sand-900',
+    outline: 'border-2 border-theme-primary text-theme-primary hover:bg-theme-background-sand',
   };
 
   const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;

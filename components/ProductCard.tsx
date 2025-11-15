@@ -19,21 +19,21 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const badgeStyles = {
-    patreon: 'bg-orange-500 text-white',
-    makerworld: 'bg-blue-500 text-white',
+    patreon: 'bg-badge-orange-bg text-theme-text-inverse',
+    makerworld: 'bg-badge-blue-bg text-theme-text-inverse',
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-full border border-gray-100 hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-theme-surface rounded-xl shadow-lg p-6 flex flex-col h-full border border-theme-border-light hover:shadow-xl transition-shadow duration-200">
       <div className="mb-4">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+        <h3 className="text-xl font-bold text-theme-text-primary mb-2">{product.name}</h3>
         <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${badgeStyles[product.badge.type]}`}>
           {product.badge.text}
         </span>
       </div>
 
       {product.image && (
-        <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-square flex items-center justify-center">
+        <div className="mb-4 rounded-lg overflow-hidden bg-theme-border-light aspect-square flex items-center justify-center">
           <img
             src={product.image}
             alt={product.name}
@@ -42,7 +42,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       )}
 
-      <p className="text-gray-600 mb-6 flex-grow">
+      <p className="text-theme-text-secondary mb-6 flex-grow">
         {product.description}
       </p>
 

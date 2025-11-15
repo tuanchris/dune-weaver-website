@@ -34,10 +34,10 @@ export const FeaturesSection: React.FC = () => {
   return (
     <Section id="features" background="sand">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-4">
           Built on Principles
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">
           Designed with freedom and accessibility in mind
         </p>
       </div>
@@ -46,13 +46,13 @@ export const FeaturesSection: React.FC = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+            className="bg-theme-surface rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">
+            <h3 className="text-xl font-bold text-theme-text-primary mb-3">
               {feature.title}
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-theme-text-secondary leading-relaxed">
               {feature.description}
             </p>
           </div>
